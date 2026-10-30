@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -296,91 +295,432 @@
                     <span>The Boy — Pratyush</span>
                 </div>
 
-                <!-- Locked Photo Frame for Pratyush (1.jpg) -->
-                <div class="photo-frame w-60 h-64 sm:w-68 sm:h-72 mx-auto rounded-3xl border-4 border-indigo-500 shadow-2xl bg-indigo-950 relative flex items-center justify-center"
+                <!-- Photo Frame for Pratyush (1.jpg) with Fallback -->
+                <div class="photo-frame w-60 h-64 sm:w-68 sm:h-72 mx-auto rounded-3xl border-4 border-indigo-500 shadow-2xl bg-indigo-950 relative flex items-center justify-center overflow-hidden"
                      title="The Boy — Pratyush">
-                    
-                    <!-- Custom Portrait of Pratyush (Boy in dark blue shirt + maroon lanyard making peace sign in purple lighting) -->
-                    <svg id="pratyushSvgPortrait" viewBox="0 0 300 320" class="w-full h-full object-cover">
-                        <defs>
-                            <linearGradient id="pratBg" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#3b1d7a"/>
-                                <stop offset="50%" stop-color="#1e1b4b"/>
-                                <stop offset="100%" stop-color="#0f172a"/>
-                            </linearGradient>
-                            <radialGradient id="purpleGlow" cx="30%" cy="25%" r="60%">
-                                <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.55"/>
-                                <stop offset="100%" stop-color="#1e1b4b" stop-opacity="0"/>
-                            </radialGradient>
-                            <linearGradient id="skinToneBoy" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#d99b78"/>
-                                <stop offset="100%" stop-color="#b87654"/>
-                            </linearGradient>
-                        </defs>
-                        <!-- Background purple/blue glow -->
-                        <rect width="300" height="320" fill="url(#pratBg)"/>
-                        <rect width="300" height="320" fill="url(#purpleGlow)"/>
-                        <!-- Neon decorative accent in background -->
-                        <circle cx="255" cy="175" r="28" fill="#eab308" opacity="0.75"/>
-                        <path d="M235 160 L275 190 M245 150 L280 175" stroke="#ef4444" stroke-width="5" stroke-linecap="round"/>
-
-                        <!-- Navy Blue Crewneck T-Shirt -->
-                        <path d="M35 320 C45 245 95 230 155 230 C215 230 265 245 285 320 Z" fill="#172554"/>
-                        <path d="M110 232 Q155 258 205 232" fill="none" stroke="#1e3a8a" stroke-width="8"/>
-
-                        <!-- Maroon Lanyard ("CRAYONS") -->
-                        <path d="M112 232 L135 320 L153 320 L126 232 Z" fill="#881337"/>
-                        <path d="M202 228 L222 320 L245 320 L220 225 Z" fill="#9f1239"/>
-                        <text x="218" y="285" fill="#fde047" font-size="9" font-weight="bold" transform="rotate(77 218,285)" font-family="sans-serif">CRAYONS</text>
-
-                        <!-- Neck -->
-                        <path d="M122 195 L122 242 Q155 255 192 238 L192 190 Z" fill="url(#skinToneBoy)"/>
-                        <path d="M125 205 Q155 225 188 202" fill="none" stroke="#9a5b3e" stroke-width="3" opacity="0.45"/>
-
-                        <!-- Head & Ears -->
-                        <g transform="rotate(-5 152 135)">
-                            <ellipse cx="78" cy="150" rx="14" ry="23" transform="rotate(-12 78 150)" fill="url(#skinToneBoy)"/>
-                            <ellipse cx="226" cy="138" rx="14" ry="23" transform="rotate(10 226 138)" fill="url(#skinToneBoy)"/>
-                            <rect x="84" y="55" width="136" height="152" rx="64" fill="url(#skinToneBoy)"/>
-                            <path d="M80 122 C72 68 108 32 156 34 C205 34 232 68 224 118 C218 88 198 72 162 68 C126 65 95 82 80 122 Z" fill="#1e1b2e"/>
-                            <path d="M92 62 Q145 36 202 58" fill="none" stroke="#6366f1" stroke-width="4" opacity="0.45" stroke-linecap="round"/>
-
-                            <!-- Eyebrows -->
-                            <path d="M104 108 Q122 98 140 105" fill="none" stroke="#271c24" stroke-width="5" stroke-linecap="round"/>
-                            <path d="M164 103 Q184 94 202 103" fill="none" stroke="#271c24" stroke-width="5" stroke-linecap="round"/>
-
-                            <!-- Eyes -->
-                            <ellipse cx="123" cy="122" rx="13" ry="7" fill="#ffffff"/>
-                            <circle cx="124" cy="122" r="6" fill="#291811"/>
-                            <circle cx="126" cy="120" r="2" fill="#ffffff"/>
-
-                            <ellipse cx="182" cy="119" rx="13" ry="7" fill="#ffffff"/>
-                            <circle cx="181" cy="119" r="6" fill="#291811"/>
-                            <circle cx="183" cy="117" r="2" fill="#ffffff"/>
-
-                            <!-- Nose -->
-                            <path d="M152 118 L145 145 Q154 152 165 144" fill="none" stroke="#8c4f36" stroke-width="3.5" stroke-linecap="round"/>
-
-                            <!-- Smile -->
-                            <path d="M124 168 Q155 182 184 164" fill="none" stroke="#7c3a2d" stroke-width="4.5" stroke-linecap="round"/>
-                            <path d="M130 172 Q155 183 178 169" fill="none" stroke="#d48279" stroke-width="3" stroke-linecap="round"/>
-                        </g>
-
-                        <!-- Peace Sign Hand (✌️) in Bottom-Left Foreground -->
-                        <g transform="translate(8, 195)">
-                            <rect x="10" y="15" width="17" height="65" rx="8.5" transform="rotate(-14 18 45)" fill="url(#skinToneBoy)" stroke="#8c4f36" stroke-width="1.5"/>
-                            <rect x="34" y="12" width="17" height="68" rx="8.5" transform="rotate(8 42 45)" fill="url(#skinToneBoy)" stroke="#8c4f36" stroke-width="1.5"/>
-                            <rect x="8" y="65" width="52" height="55" rx="20" fill="url(#skinToneBoy)" stroke="#8c4f36" stroke-width="1.5"/>
-                        </g>
-
-                        <!-- Photo Tag Badge inside Corner -->
-                        <rect x="12" y="12" width="110" height="26" rx="13" fill="rgba(15, 23, 42, 0.75)"/>
-                        <text x="67" y="29" fill="#e0e7ff" font-size="11" font-weight="bold" text-anchor="middle" font-family="Fredoka, sans-serif">✌️ Pratyush</text>
-                    </svg>
-
-                    <!-- Direct Locked Image Element for Pratyush (1.jpg) -->
                     <img id="pratyushImg" 
                          src="1.jpg" 
                          alt="The Boy - Pratyush" 
                          draggable="false"
-         
+                         onerror="this.onerror=null; this.style.display='none'; document.getElementById('pratyushFallback').style.display='flex';"
+                         class="w-full h-full object-cover select-none">
+                    <div id="pratyushFallback" class="absolute inset-0 bg-gradient-to-br from-indigo-600 to-indigo-900 flex-col items-center justify-center text-white p-4" style="display: none;">
+                        <i class="fa-solid fa-user text-5xl mb-2 text-indigo-200"></i>
+                        <span class="font-display font-bold text-xl">Pratyush</span>
+                        <span class="text-xs text-indigo-200 mt-1">1.jpg</span>
+                    </div>
+                </div>
+
+                <!-- Name & Title (Locked) -->
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-indigo-950 mt-5">
+                    Pratyush
+                </h2>
+                <p class="text-indigo-600 font-bold text-sm sm:text-base mt-1">
+                    👦 That's The Boy • Pratyush!
+                </p>
+
+                <!-- Fun Trait Badges -->
+                <div class="flex flex-wrap justify-center gap-2 mt-4">
+                    <span class="px-3 py-1 rounded-xl bg-indigo-50 text-indigo-700 font-semibold text-xs border border-indigo-200">✌️ Peace Sign Pose</span>
+                    <span class="px-3 py-1 rounded-xl bg-blue-50 text-blue-700 font-semibold text-xs border border-blue-200">💙 Navy Shirt Vibe</span>
+                    <span class="px-3 py-1 rounded-xl bg-purple-50 text-purple-700 font-semibold text-xs border border-purple-200">🌟 The Boy</span>
+                </div>
+
+                <!-- Locked Official Badge -->
+                <div class="mt-5 w-full py-2.5 px-4 rounded-2xl bg-indigo-50 border border-indigo-200 text-indigo-800 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm">
+                    <i class="fa-solid fa-shield-heart text-indigo-600"></i>
+                    <span>Official Locked Profile • Pratyush</span>
+                </div>
+            </div>
+
+            <!-- CENTER GLOWING "X" SYMBOL -->
+            <div class="md:col-span-1 flex flex-col items-center justify-center py-2">
+                <button type="button" onclick="triggerCenterSparkle()" 
+                        title="Click for a burst of sparkles!"
+                        class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 text-white font-display text-4xl sm:text-5xl font-bold flex items-center justify-center border-4 border-white x-badge-glow cursor-pointer select-none transition transform active:scale-90">
+                    <span id="centerSymbol">X</span>
+                </button>
+                <span class="mt-2 px-3 py-1 rounded-full bg-white text-pink-600 font-extrabold text-xs shadow-md whitespace-nowrap select-none">
+                    Pratyush x Aarohi
+                </span>
+            </div>
+
+            <!-- CARD 2: AAROHI (THE GIRL - 2.jpg) -->
+            <div class="md:col-span-5 glass-panel rounded-3xl p-6 sm:p-8 shadow-2xl text-center relative float-card-delayed border-t-8 border-t-pink-500 select-none">
+                <!-- Top Role Pill -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-500 text-white font-bold text-xs sm:text-sm uppercase tracking-wider mb-4 shadow-md">
+                    <i class="fa-solid fa-girl"></i>
+                    <span>The Girl — Aarohi</span>
+                </div>
+
+                <!-- Photo Frame for Aarohi (2.jpg) with Fallback -->
+                <div class="photo-frame w-60 h-64 sm:w-68 sm:h-72 mx-auto rounded-3xl border-4 border-pink-500 shadow-2xl bg-emerald-950 relative flex items-center justify-center overflow-hidden"
+                     title="The Girl — Aarohi">
+                    <img id="aarohiImg" 
+                         src="2.jpg" 
+                         alt="The Girl - Aarohi" 
+                         draggable="false"
+                         onerror="this.onerror=null; this.style.display='none'; document.getElementById('aarohiFallback').style.display='flex';"
+                         class="w-full h-full object-cover select-none">
+                    <div id="aarohiFallback" class="absolute inset-0 bg-gradient-to-br from-pink-500 to-rose-900 flex-col items-center justify-center text-white p-4" style="display: none;">
+                        <i class="fa-solid fa-user text-5xl mb-2 text-pink-200"></i>
+                        <span class="font-display font-bold text-xl">Aarohi</span>
+                        <span class="text-xs text-pink-200 mt-1">2.jpg</span>
+                    </div>
+                </div>
+
+                <!-- Name & Title (Locked) -->
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-indigo-950 mt-5">
+                    Aarohi
+                </h2>
+                <p class="text-pink-600 font-bold text-sm sm:text-base mt-1">
+                    👧 That's The Girl • Aarohi!
+                </p>
+
+                <!-- Fun Trait Badges -->
+                <div class="flex flex-wrap justify-center gap-2 mt-4">
+                    <span class="px-3 py-1 rounded-xl bg-pink-50 text-pink-700 font-semibold text-xs border border-pink-200">👑 Boss Shirt Energy</span>
+                    <span class="px-3 py-1 rounded-xl bg-rose-50 text-rose-700 font-semibold text-xs border border-rose-200">🌿 Nature Glow</span>
+                    <span class="px-3 py-1 rounded-xl bg-amber-50 text-amber-700 font-semibold text-xs border border-amber-200">✨ The Girl</span>
+                </div>
+
+                <!-- Locked Official Badge -->
+                <div class="mt-5 w-full py-2.5 px-4 rounded-2xl bg-pink-50 border border-pink-200 text-pink-800 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm">
+                    <i class="fa-solid fa-shield-heart text-pink-600"></i>
+                    <span>Official Locked Profile • Aarohi</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 2.5 Combined "Pratyush x Aarohi" Together Banner Card (Locked) -->
+        <section class="glass-panel rounded-3xl p-6 sm:p-8 shadow-2xl border-2 border-pink-300/80 relative overflow-hidden select-none">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Left Text Info -->
+                <div class="text-center md:text-left space-y-2 max-w-md">
+                    <span class="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 text-white font-bold text-xs uppercase tracking-wider shadow">
+                        ⚡ Official Duo Showcase
+                    </span>
+                    <h3 class="font-display text-3xl sm:text-4xl font-bold text-indigo-950">
+                        Pratyush <span class="text-pink-500">x</span> Aarohi Together!
+                    </h3>
+                    <p class="text-slate-600 text-sm font-medium">
+                        Permanent side-by-side duo showcase featuring <strong>The Boy (Pratyush)</strong> and <strong>The Girl (Aarohi)</strong>.
+                    </p>
+                    <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-2">
+                        <button type="button" onclick="triggerCenterSparkle()" class="px-5 py-2.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-pink-500 hover:from-indigo-700 hover:to-pink-600 text-white font-bold text-xs sm:text-sm shadow-md transition active:scale-95 flex items-center gap-2">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span>Celebrate Pratyush x Aarohi!</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Combined Mini-Frame Collages (Locked) -->
+                <div class="flex items-center justify-center gap-2 sm:gap-4 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 p-4 rounded-3xl border-2 border-white shadow-inner">
+                    <!-- Mini Pratyush -->
+                    <div class="text-center">
+                        <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-4 border-indigo-500 shadow-lg relative bg-indigo-950 flex items-center justify-center">
+                            <img id="pratyushMiniImg" src="1.jpg" alt="Pratyush" draggable="false" onerror="this.style.display='none';" class="w-full h-full object-cover select-none">
+                            <i class="fa-solid fa-user text-white text-2xl absolute" style="z-index: 0;"></i>
+                        </div>
+                        <span class="block font-display font-bold text-xs text-indigo-900 mt-1.5">Pratyush (Boy)</span>
+                    </div>
+
+                    <!-- Mini Glowing X -->
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-r from-indigo-600 to-pink-500 text-white font-display font-bold text-xl flex items-center justify-center shadow-lg">
+                        X
+                    </div>
+
+                    <!-- Mini Aarohi -->
+                    <div class="text-center">
+                        <div class="w-24 h-24 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-4 border-pink-500 shadow-lg relative bg-emerald-950 flex items-center justify-center">
+                            <img id="aarohiMiniImg" src="2.jpg" alt="Aarohi" draggable="false" onerror="this.style.display='none';" class="w-full h-full object-cover select-none">
+                            <i class="fa-solid fa-user text-white text-2xl absolute" style="z-index: 0;"></i>
+                        </div>
+                        <span class="block font-display font-bold text-xs text-pink-700 mt-1.5">Aarohi (Girl)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Interactive Widgets & Locked Highlights Section -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+            <!-- WIDGET A: Best Duo / Compatibility Meter -->
+            <div class="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <h3 class="font-display text-2xl font-bold text-indigo-950 flex items-center gap-2">
+                            <i class="fa-solid fa-bolt-lightning text-amber-500"></i>
+                            <span>Pratyush x Aarohi Duo Meter</span>
+                        </h3>
+                        <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 font-bold text-xs">100% Verified</span>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-6">
+                        Test the awesome factor of the <strong>Pratyush x Aarohi</strong> combination! Click the button below to power up the meter.
+                    </p>
+
+                    <!-- Animated Progress Bar Container -->
+                    <div class="bg-slate-200/80 rounded-2xl h-8 w-full overflow-hidden p-1 shadow-inner relative">
+                        <div id="duoProgressBar" 
+                             class="h-full rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-all duration-300 flex items-center justify-end pr-3 text-white font-bold text-xs"
+                             style="width: 100%;">
+                             100% MAX!
+                        </div>
+                    </div>
+
+                    <!-- Percentage & Status Readout -->
+                    <div class="mt-4 text-center bg-gradient-to-r from-indigo-50/90 via-purple-50/90 to-pink-50/90 rounded-2xl p-4 border border-purple-100">
+                        <div id="duoPercentageText" class="font-display text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-600">
+                            100% AWESOME!
+                        </div>
+                        <p id="duoStatusMessage" class="text-xs sm:text-sm font-semibold text-slate-600 mt-1">
+                            100% LEGENDARY DUO! Pratyush x Aarohi are unstoppable! 🏆✨
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex flex-col sm:flex-row gap-3">
+                    <button type="button" id="calcDuoBtn" onclick="runDuoMeter()" class="flex-1 py-3.5 px-6 rounded-2xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 hover:from-indigo-700 hover:to-pink-600 text-white font-display font-bold text-base shadow-lg hover:shadow-xl transition transform active:scale-95 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>Calculate Duo Power!</span>
+                    </button>
+                    <button type="button" onclick="sendHighFive()" class="py-3.5 px-5 rounded-2xl bg-amber-400 hover:bg-amber-500 text-indigo-950 font-display font-bold text-base shadow-md transition transform active:scale-95 flex items-center justify-center gap-2">
+                        <span>🙌 Cheer</span>
+                        <span id="cheerCountBadge" class="px-2 py-0.5 rounded-full bg-white text-indigo-950 text-xs">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- WIDGET B: Locked Curated Pratyush x Aarohi Highlights -->
+            <div class="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between select-none">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <h3 class="font-display text-2xl font-bold text-indigo-950 flex items-center gap-2">
+                            <i class="fa-solid fa-award text-pink-500"></i>
+                            <span>Pratyush x Aarohi Highlights</span>
+                        </h3>
+                        <span class="px-3 py-1 rounded-full bg-pink-100 text-pink-800 font-bold text-xs flex items-center gap-1">
+                            <i class="fa-solid fa-lock text-[10px]"></i> Locked
+                        </span>
+                    </div>
+
+                    <!-- Curated Non-Editable Duo Highlights Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="p-4 rounded-2xl border bg-indigo-50 border-indigo-200 text-indigo-900 shadow-sm">
+                            <div class="font-display font-bold text-sm mb-1 flex items-center gap-1.5">
+                                <span>👦</span>
+                                <span>The Boy: Pratyush</span>
+                            </div>
+                            <p class="text-xs font-medium text-indigo-800/90 leading-relaxed">
+                                Always rocking the cool peace sign pose ✌️ with unstoppable positive energy!
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl border bg-pink-50 border-pink-200 text-pink-900 shadow-sm">
+                            <div class="font-display font-bold text-sm mb-1 flex items-center gap-1.5">
+                                <span>👧</span>
+                                <span>The Girl: Aarohi</span>
+                            </div>
+                            <p class="text-xs font-medium text-pink-800/90 leading-relaxed">
+                                Bright smile, Boss energy 👑, and natural sunshine vibes everywhere she goes!
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl border bg-purple-50 border-purple-200 text-purple-900 shadow-sm">
+                            <div class="font-display font-bold text-sm mb-1 flex items-center gap-1.5">
+                                <span>⚡</span>
+                                <span>Pratyush x Aarohi</span>
+                            </div>
+                            <p class="text-xs font-medium text-purple-800/90 leading-relaxed">
+                                100% Certified Legendary Duo — the ultimate combination of cool and awesome!
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl border bg-amber-50 border-amber-200 text-amber-900 shadow-sm">
+                            <div class="font-display font-bold text-sm mb-1 flex items-center gap-1.5">
+                                <span>🏆</span>
+                                <span>Forever Iconic</span>
+                            </div>
+                            <p class="text-xs font-medium text-amber-800/90 leading-relaxed">
+                                Official locked showcase page celebrating Pratyush and Aarohi! 🌟
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Locked Status Banner -->
+                <div class="mt-5 p-3.5 rounded-2xl bg-slate-900/90 text-white text-xs flex items-center justify-between gap-3">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+                        <span>Official Forever Showcase • <strong>Pratyush x Aarohi</strong></span>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-lg bg-white/10 font-bold text-[11px] text-pink-300 shrink-0">100% Iconic</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Footer Banner -->
+        <footer class="pt-2 pb-6 text-center select-none">
+            <div class="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 px-6 py-3.5 rounded-full glass-panel shadow-2xl border-2 border-pink-300">
+                <span class="font-display text-base sm:text-lg font-bold text-indigo-950 tracking-wide">
+                    Made with <span class="heart-pulse mx-1 text-xl">❤️</span> by <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-600 font-extrabold">Pratyush</span>
+                </span>
+                <span class="hidden sm:inline text-slate-300">•</span>
+                <span class="text-xs font-semibold text-pink-600 bg-pink-50 px-3 py-1 rounded-full border border-pink-200">
+                    Pratyush x Aarohi Forever ✨
+                </span>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // --- 1. Locked Photo Loader (1.jpg for Pratyush, 2.jpg for Aarohi) ---
+        window.verifyLockedPhotos = function() {
+            const photoMap = [
+                { ids: ['pratyushImg', 'pratyushMiniImg'], src: '1.jpg' },
+                { ids: ['aarohiImg', 'aarohiMiniImg'], src: '2.jpg' }
+            ];
+
+            photoMap.forEach(({ ids, src }) => {
+                const probe = new Image();
+                probe.onload = function() {
+                    ids.forEach(id => {
+                        const el = document.getElementById(id);
+                        if (el) {
+                            el.src = src;
+                            el.style.opacity = '1';
+                        }
+                    });
+                };
+                probe.src = src;
+            });
+        };
+
+        // --- 2. Confetti & Sparkle Burst Canvas ---
+        const canvas = document.getElementById('confettiCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        window.launchConfetti = function() {
+            const colors = ['#ec4899', '#6366f1', '#facc15', '#38bdf8', '#a855f7', '#fb7185'];
+            for (let i = 0; i < 85; i++) {
+                particles.push({
+                    x: window.innerWidth / 2 + (Math.random() - 0.5) * 200,
+                    y: window.innerHeight / 2,
+                    vx: (Math.random() - 0.5) * 16,
+                    vy: (Math.random() - 1) * 16 - 4,
+                    size: Math.random() * 8 + 5,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    rotation: Math.random() * 360,
+                    vr: (Math.random() - 0.5) * 12,
+                    alpha: 1
+                });
+            }
+        };
+
+        window.triggerCenterSparkle = function() {
+            window.launchConfetti();
+            window.playCelebrationChime();
+        };
+
+        function updateConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = particles.length - 1; i >= 0; i--) {
+                const p = particles[i];
+                p.x += p.vx;
+                p.y += p.vy;
+                p.vy += 0.35;
+                p.rotation += p.vr;
+                p.alpha -= 0.012;
+
+                if (p.alpha <= 0 || p.y > canvas.height + 20) {
+                    particles.splice(i, 1);
+                    continue;
+                }
+
+                ctx.save();
+                ctx.globalAlpha = Math.max(0, p.alpha);
+                ctx.translate(p.x, p.y);
+                ctx.rotate((p.rotation * Math.PI) / 180);
+                ctx.fillStyle = p.color;
+                ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                ctx.restore();
+            }
+            requestAnimationFrame(updateConfetti);
+        }
+
+        // --- 3. Best Duo Meter Animation ---
+        let meterRunning = false;
+        const duoMessages = [
+            "100% LEGENDARY DUO! Pratyush x Aarohi are unstoppable! 🏆✨",
+            "100% AWESOME VIBES! Certified Best Combo Ever! 🌟🚀",
+            "INFINITY / 100! Maximum Coolness Level Reached! ⚡👑"
+        ];
+        let msgIndex = 0;
+
+        window.runDuoMeter = function() {
+            if (meterRunning) return;
+            meterRunning = true;
+
+            const bar = document.getElementById('duoProgressBar');
+            const pctText = document.getElementById('duoPercentageText');
+            const statusMsg = document.getElementById('duoStatusMessage');
+
+            bar.style.width = '0%';
+            pctText.textContent = '0%';
+            statusMsg.textContent = 'Scanning Pratyush x Aarohi energy levels... 🔍';
+
+            let current = 0;
+            const interval = setInterval(() => {
+                current += Math.floor(Math.random() * 9) + 4;
+                if (current >= 100) {
+                    current = 100;
+                    clearInterval(interval);
+                    bar.style.width = '100%';
+                    bar.textContent = '100% MAX!';
+                    pctText.textContent = '100% AWESOME!';
+                    statusMsg.textContent = duoMessages[msgIndex % duoMessages.length];
+                    msgIndex++;
+                    meterRunning = false;
+                    window.launchConfetti();
+                    window.playCelebrationChime();
+                } else {
+                    bar.style.width = current + '%';
+                    bar.textContent = current + '%';
+                    pctText.textContent = current + '%';
+                    window.playPopSound(300 + current * 4);
+                }
+            }, 65);
+        };
+
+        // --- 4. High-Five / Cheer Counter ---
+        let cheerCount = 0;
+        window.sendHighFive = function() {
+            cheerCount++;
+            const badge = document.getElementById('cheerCountBadge');
+            if (badge) badge.textContent = cheerCount;
+            window.playPopSound(700);
+            if (cheerCount % 5 === 0) {
+                window.launchConfetti();
+            }
+        };
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', function() {
+            window.verifyLockedPhotos();
+            updateConfetti();
+        });
+    </script>
+</body>
+</html>
