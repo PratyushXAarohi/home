@@ -408,4 +408,368 @@
 
             <!-- CARD 2: AAROHI (THE GIRL) -->
             <div class="md:col-span-5 glass-panel rounded-3xl p-6 sm:p-8 shadow-2xl text-center relative float-card-delayed border-t-8 border-t-pink-500 select-none">
-                
+                <!-- Top Role Pill -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-500 text-white font-bold text-xs sm:text-sm uppercase tracking-wider mb-4 shadow-md">
+                    <i class="fa-solid fa-girl"></i>
+                    <span>THE GIRL</span>
+                </div>
+
+                <!-- Photo Frame for Aarohi -->
+                <div onclick="document.getElementById('aarohiFileInput').click()"
+                     class="photo-frame w-60 h-64 sm:w-68 sm:h-72 mx-auto rounded-3xl border-4 border-pink-500 shadow-2xl bg-pink-950 relative flex items-center justify-center overflow-hidden cursor-pointer"
+                     title="Aarohi — The Girl">
+                    <img id="aarohiImg"
+                         src="2.jpg"
+                         alt="The Girl - Aarohi"
+                         draggable="false"
+                         class="w-full h-full object-cover select-none block">
+                </div>
+
+                <!-- Name & Title (Locked) -->
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-indigo-950 mt-5">
+                    Aarohi
+                </h2>
+                <p class="text-pink-600 font-bold text-sm sm:text-base mt-1">
+                    👧 That's The Girl • Aarohi!
+                </p>
+
+                <!-- Fun Trait Badges -->
+                <div class="flex flex-wrap justify-center gap-2 mt-4">
+                    <span class="px-3 py-1 rounded-xl bg-pink-50 text-pink-700 font-semibold text-xs border border-pink-200">👑 Boss Shirt Energy</span>
+                    <span class="px-3 py-1 rounded-xl bg-rose-50 text-rose-700 font-semibold text-xs border border-rose-200">🌿 Nature Glow</span>
+                    <span class="px-3 py-1 rounded-xl bg-amber-50 text-amber-700 font-semibold text-xs border border-amber-200">✨ The Girl</span>
+                </div>
+
+                <!-- Locked Official Badge -->
+                <div class="mt-5 w-full py-2.5 px-4 rounded-2xl bg-pink-50 border border-pink-200 text-pink-800 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm">
+                    <i class="fa-solid fa-shield-heart text-pink-600"></i>
+                    <span>Official Profile • Aarohi</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 2.5 Combined "Pratyush x Aarohi Together" Side-by-Side Showcase Card -->
+        <section class="glass-panel rounded-3xl p-6 sm:p-8 shadow-2xl border-2 border-pink-300/80 relative overflow-hidden select-none">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <!-- Left Text Info -->
+                <div class="text-center md:text-left space-y-2 max-w-md">
+                    <span class="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 text-white font-bold text-xs uppercase tracking-wider shadow">
+                        ⚡ Official Duo Showcase
+                    </span>
+                    <h3 class="font-display text-3xl sm:text-4xl font-bold text-indigo-950">
+                        Pratyush <span class="text-pink-500">x</span> Aarohi Together!
+                    </h3>
+                    <p class="text-slate-600 text-sm font-medium">
+                        Side-by-side duo showcase featuring <strong>The Boy (Pratyush)</strong> and <strong>The Girl (Aarohi)</strong>.
+                    </p>
+                    <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-2">
+                        <button type="button" onclick="triggerCenterSparkle()" class="px-5 py-2.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-pink-500 hover:from-indigo-700 hover:to-pink-600 text-white font-bold text-xs sm:text-sm shadow-md transition active:scale-95 flex items-center gap-2">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <span>Celebrate Pratyush x Aarohi!</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Combined Duo Photo Showcase -->
+                <div class="flex items-center justify-center gap-3 sm:gap-5 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 p-4 sm:p-5 rounded-3xl border-2 border-white shadow-inner">
+                    <!-- Mini Pratyush -->
+                    <div class="text-center">
+                        <div onclick="document.getElementById('pratyushFileInput').click()"
+                             class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-4 border-indigo-500 shadow-lg relative bg-indigo-950 flex items-center justify-center cursor-pointer">
+                            <img id="pratyushMiniImg" src="1.jpg" alt="Pratyush" draggable="false" class="w-full h-full object-cover select-none block">
+                        </div>
+                        <span class="block font-display font-bold text-xs text-indigo-900 mt-1.5">Pratyush (The Boy)</span>
+                    </div>
+
+                    <!-- Floating Heart / X Badge Between Them -->
+                    <div onclick="triggerCenterSparkle()"
+                         class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 text-white font-display font-bold text-xl sm:text-2xl flex items-center justify-center shadow-lg border-2 border-white x-badge-glow cursor-pointer">
+                        <span id="duoCenterSymbol">❤️</span>
+                    </div>
+
+                    <!-- Mini Aarohi -->
+                    <div class="text-center">
+                        <div onclick="document.getElementById('aarohiFileInput').click()"
+                             class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-4 border-pink-500 shadow-lg relative bg-pink-950 flex items-center justify-center cursor-pointer">
+                            <img id="aarohiMiniImg" src="2.jpg" alt="Aarohi" draggable="false" class="w-full h-full object-cover select-none block">
+                        </div>
+                        <span class="block font-display font-bold text-xs text-pink-700 mt-1.5">Aarohi (The Girl)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Interactive Duo Power Meter & Locked Memories Wall -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+            <!-- WIDGET A: Best Duo / Compatibility Meter -->
+            <div class="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <h3 class="font-display text-2xl font-bold text-indigo-950 flex items-center gap-2">
+                            <i class="fa-solid fa-bolt-lightning text-amber-500"></i>
+                            <span>Pratyush x Aarohi Duo Meter</span>
+                        </h3>
+                        <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 font-bold text-xs">100% Verified</span>
+                    </div>
+                    <p class="text-slate-600 text-sm mb-6">
+                        Test the awesome factor of the <strong>Pratyush x Aarohi</strong> combination! Click the button below to power up the meter.
+                    </p>
+
+                    <!-- Animated Progress Bar Container -->
+                    <div class="bg-slate-200/80 rounded-2xl h-8 w-full overflow-hidden p-1 shadow-inner relative">
+                        <div id="duoProgressBar"
+                             class="h-full rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-all duration-300 flex items-center justify-end pr-3 text-white font-bold text-xs"
+                             style="width: 100%;">
+                             100% MAX!
+                        </div>
+                    </div>
+
+                    <!-- Percentage & Status Readout -->
+                    <div class="mt-4 text-center bg-gradient-to-r from-indigo-50/90 via-purple-50/90 to-pink-50/90 rounded-2xl p-4 border border-purple-100">
+                        <div id="duoPercentageText" class="font-display text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-600">
+                            100% AWESOME!
+                        </div>
+                        <p id="duoStatusMessage" class="text-xs sm:text-sm font-semibold text-slate-600 mt-1">
+                            100% LEGENDARY DUO! Pratyush x Aarohi are unstoppable! 🏆✨
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex flex-col sm:flex-row gap-3">
+                    <button type="button" id="calcDuoBtn" onclick="runDuoMeter()" class="flex-1 py-3.5 px-6 rounded-2xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 hover:from-indigo-700 hover:to-pink-600 text-white font-display font-bold text-base shadow-lg hover:shadow-xl transition transform active:scale-95 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>Calculate Duo Power!</span>
+                    </button>
+                    <button type="button" onclick="sendHighFive()" class="py-3.5 px-5 rounded-2xl bg-amber-400 hover:bg-amber-500 text-indigo-950 font-display font-bold text-base shadow-md transition transform active:scale-95 flex items-center justify-center gap-2">
+                        <span>❤️ Cheer</span>
+                        <span id="cheerCountBadge" class="px-2 py-0.5 rounded-full bg-white text-indigo-950 text-xs">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- WIDGET B: Locked Memories & Highlights Wall -->
+            <div class="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between select-none">
+                <div>
+                    <div class="flex items-center justify-between gap-2 mb-4">
+                        <h3 class="font-display text-2xl font-bold text-indigo-950 flex items-center gap-2">
+                            <i class="fa-solid fa-heart text-pink-500"></i>
+                            <span>Pratyush x Aarohi Highlights</span>
+                        </h3>
+                        <span class="px-3 py-1 rounded-full bg-pink-100 text-pink-800 font-bold text-xs flex items-center gap-1">
+                            <i class="fa-solid fa-star text-[10px]"></i> Official
+                        </span>
+                    </div>
+
+                    <!-- Curated Non-Editable Duo Highlights Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div class="p-4 rounded-2xl border bg-indigo-50 border-indigo-200 text-indigo-900 shadow-sm">
+                            <div class="font-display font-bold text-sm mb-1 flex items-center gap-1.5">
+                                <span>👦</span>
+                                <span>The Boy: Pratyush</span>
+                            </div>
+                            <p class="text-xs font-medium text-indigo-800/90 leading-relaxed">
+                                Always rocking the cool peace sign pose ✌️ with unstoppable positive energy!
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl border bg-pink-50 border-pink-200 text-pink-900 shadow-sm">
+                            <div class="font-display font-bold text-sm mb-1 flex items-center gap-1.5">
+                                <span>👧</span>
+                                <span>The Girl: Aarohi</span>
+                            </div>
+                            <p class="text-xs font-medium text-pink-800/90 leading-relaxed">
+                                Bright smile, Boss energy 👑, and natural sunshine vibes everywhere she goes!
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl border bg-purple-50 border-purple-200 text-purple-900 shadow-sm">
+                            <div class="font-display font-bold text-sm mb-1 flex items-center gap-1.5">
+                                <span>⚡</span>
+                                <span>Pratyush x Aarohi</span>
+                            </div>
+                            <p class="text-xs font-medium text-purple-800/90 leading-relaxed">
+                                100% Certified Legendary Duo — the ultimate combination of cool and awesome!
+                            </p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl border bg-amber-50 border-amber-200 text-amber-900 shadow-sm">
+                            <div class="font-display font-bold text-sm mb-1 flex items-center gap-1.5">
+                                <span>🏆</span>
+                                <span>Forever Iconic</span>
+                            </div>
+                            <p class="text-xs font-medium text-amber-800/90 leading-relaxed">
+                                Official showcase page celebrating the unbeatable duo of Pratyush and Aarohi! 🌟
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Status Banner -->
+                <div class="mt-5 p-3.5 rounded-2xl bg-slate-900/90 text-white text-xs flex items-center justify-between gap-3">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
+                        <span>Official Forever Showcase • <strong>Pratyush x Aarohi</strong></span>
+                    </div>
+                    <span class="px-2.5 py-1 rounded-lg bg-white/10 font-bold text-[11px] text-pink-300 shrink-0">100% Iconic</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 4. Footer Signature Banner -->
+        <footer class="pt-2 pb-6 text-center select-none">
+            <div class="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 px-6 py-3.5 rounded-full glass-panel shadow-2xl border-2 border-pink-300">
+                <span class="font-display text-base sm:text-lg font-bold text-indigo-950 tracking-wide">
+                    Made with <span class="heart-pulse mx-1 text-xl">❤️</span> by <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-600 font-extrabold">Pratyush</span>
+                </span>
+                <span class="hidden sm:inline text-slate-300">•</span>
+                <span class="text-xs font-semibold text-pink-600 bg-pink-50 px-3 py-1 rounded-full border border-pink-200">
+                    Pratyush x Aarohi Forever ✨
+                </span>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Photo Resolution & Confetti Animation Script -->
+    <script>
+        // Apply an image source to both main card and together card
+        window.setPersonPhotoSrc = function(person, src) {
+            if (!src) return;
+            if (person === 'pratyush') {
+                const mainEl = document.getElementById('pratyushImg');
+                const miniEl = document.getElementById('pratyushMiniImg');
+                if (mainEl) mainEl.src = src;
+                if (miniEl) miniEl.src = src;
+            } else if (person === 'aarohi') {
+                const mainEl = document.getElementById('aarohiImg');
+                const miniEl = document.getElementById('aarohiMiniImg');
+                if (mainEl) mainEl.src = src;
+                if (miniEl) miniEl.src = src;
+            }
+        };
+
+        // Silent click-on-photo handler to persist photo in localStorage for preview
+        window.handleSilentPhotoSelect = function(event, person) {
+            const file = event.target.files && event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    const MAX_DIM = 600;
+                    let w = img.width;
+                    let h = img.height;
+                    if (w > h && w > MAX_DIM) {
+                        h = Math.round(h * (MAX_DIM / w));
+                        w = MAX_DIM;
+                    } else if (h >= w && h > MAX_DIM) {
+                        w = Math.round(w * (MAX_DIM / h));
+                        h = MAX_DIM;
+                    }
+                    const offCanvas = document.createElement('canvas');
+                    offCanvas.width = w;
+                    offCanvas.height = h;
+                    offCanvas.getContext('2d').drawImage(img, 0, 0, w, h);
+                    const dataUrl = offCanvas.toDataURL('image/jpeg', 0.88);
+
+                    try {
+                        localStorage.setItem(person + '_img', dataUrl);
+                    } catch (err) {}
+
+                    window.setPersonPhotoSrc(person, dataUrl);
+                    window.playCelebrationChime();
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        };
+
+        // Multi-filename automatic photo loader
+        window.initPhotos = function() {
+            const configs = [
+                {
+                    person: 'pratyush',
+                    storageKey: 'pratyush_img',
+                    SessionFallbackKey: 'baked_pratyush_b64',
+                    candidates: ['1.jpg', '868_2.jpg', '868.jpg', '791_2.jpg', '791.jpg', '790.jpg']
+                },
+                {
+                    person: 'aarohi',
+                    storageKey: 'aarohi_img',
+                    SessionFallbackKey: 'baked_aarohi_b64',
+                    candidates: ['2.jpg', '869_2.jpg', '869.jpg', '792_2.jpg', '792.jpg', '789.jpg']
+                }
+            ];
+
+            configs.forEach(cfg => {
+                try {
+                    const savedLocal = localStorage.getItem(cfg.storageKey) || sessionStorage.getItem(cfg.SessionFallbackKey);
+                    if (savedLocal) {
+                        window.setPersonPhotoSrc(cfg.person, savedLocal);
+                        return;
+                    }
+                } catch (e) {}
+
+                let index = 0;
+                function tryNextCandidate() {
+                    if (index >= cfg.candidates.length) return;
+                    const candidate = cfg.candidates[index++];
+                    const testImg = new Image();
+                    testImg.onload = function() {
+                        window.setPersonPhotoSrc(cfg.person, candidate);
+                    };
+                    testImg.onerror = tryNextCandidate;
+                    testImg.src = candidate;
+                }
+                tryNextCandidate();
+            });
+        };
+
+        // Confetti animation loop
+        const canvas = document.getElementById('confettiCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        function updateConfetti() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = window.particles.length - 1; i >= 0; i--) {
+                const p = window.particles[i];
+                p.x += p.vx;
+                p.y += p.vy;
+                p.vy += 0.35;
+                p.rotation += p.vr;
+                p.alpha -= 0.012;
+
+                if (p.alpha <= 0 || p.y > canvas.height + 20) {
+                    window.particles.splice(i, 1);
+                    continue;
+                }
+
+                ctx.save();
+                ctx.globalAlpha = Math.max(0, p.alpha);
+                ctx.translate(p.x, p.y);
+                ctx.rotate((p.rotation * Math.PI) / 180);
+                ctx.fillStyle = p.color;
+                ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                ctx.restore();
+            }
+            requestAnimationFrame(updateConfetti);
+        }
+
+        window.addEventListener('DOMContentLoaded', function() {
+            window.initPhotos();
+            updateConfetti();
+        });
+    </script>
+</body>
+</html>
