@@ -658,109 +658,146 @@
         }
 
         /* ==========================================================================
-           SMART TROUBLESHOOTER FLOATING BUTTON & MODAL
+           FUTURE BABY PREDICTION SECTION (3.jpg)
            ========================================================================== */
-        .troubleshooter-fab {
-            position: fixed;
-            bottom: 14px;
-            right: 14px;
-            z-index: 95;
-            background: rgba(15, 23, 42, 0.88);
-            color: #ffffff;
-            border: 1.5px solid rgba(255, 255, 255, 0.35);
-            padding: 9px 14px;
-            border-radius: 999px;
-            font-size: 12px;
-            font-weight: 700;
-            cursor: pointer;
+        .baby-card {
+            padding: 26px 20px;
+            text-align: center;
+            border-top: 8px solid #f59e0b;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @media (min-width: 768px) {
+            .baby-card {
+                padding: 32px 36px;
+            }
+        }
+
+        .baby-lab-pill {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-            backdrop-filter: blur(8px);
-        }
-
-        .ts-status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #10b981;
-        }
-
-        .ts-modal-backdrop {
-            position: fixed;
-            inset: 0;
-            background: rgba(15, 23, 42, 0.72);
-            backdrop-filter: blur(6px);
-            z-index: 100;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 14px;
-            overflow-y: auto;
-        }
-
-        .ts-modal-box {
-            background: #ffffff;
-            color: #0f172a;
-            width: 100%;
-            max-width: 560px;
-            border-radius: 24px;
-            padding: 20px;
-            box-shadow: 0 24px 48px rgba(0,0,0,0.4);
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .ts-diag-row {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 10px;
-            padding: 10px 12px;
-            border-radius: 12px;
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            margin-bottom: 8px;
-            font-size: 12px;
-        }
-
-        .ts-badge-ok {
-            background: #dcfce7;
-            color: #166534;
-            font-weight: 800;
-            padding: 3px 8px;
+            padding: 6px 16px;
             border-radius: 999px;
-            font-size: 11px;
-            white-space: nowrap;
-        }
-
-        .ts-badge-warn {
-            background: #fef3c7;
+            background: linear-gradient(90deg, #fef3c7, #fce7f3, #e0e7ff);
+            border: 1.5px solid #f59e0b;
             color: #92400e;
+            font-size: 12px;
             font-weight: 800;
-            padding: 3px 8px;
-            border-radius: 999px;
-            font-size: 11px;
-            white-space: nowrap;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin-bottom: 10px;
         }
 
-        .ts-btn {
-            border: none;
-            cursor: pointer;
-            padding: 10px 14px;
+        .baby-layout {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 22px;
+            margin-top: 18px;
+        }
+
+        @media (min-width: 768px) {
+            .baby-layout {
+                flex-direction: row;
+                gap: 32px;
+                text-align: left;
+            }
+        }
+
+        .baby-frame-wrap {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .baby-frame {
+            width: 220px;
+            height: 235px;
+            border-radius: 26px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #78350f, #831843);
+            border: 5px solid #f59e0b;
+            box-shadow: 0 0 28px rgba(245, 158, 11, 0.65), 0 0 50px rgba(236, 72, 153, 0.55);
+            animation: pulseGlow 3.2s infinite ease-in-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .baby-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        .baby-crown-tag {
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(90deg, #f59e0b, #ec4899);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 900;
+            padding: 5px 14px;
+            border-radius: 999px;
+            border: 2px solid #ffffff;
+            white-space: nowrap;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+        }
+
+        .baby-details {
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .baby-details {
+                align-items: flex-start;
+            }
+        }
+
+        .dna-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        @media (min-width: 768px) {
+            .dna-badges {
+                justify-content: flex-start;
+            }
+        }
+
+        .dna-badge {
+            padding: 7px 13px;
             border-radius: 12px;
             font-size: 12px;
             font-weight: 800;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 6px;
-            transition: transform 0.12s ease;
+            gap: 5px;
         }
 
-        .ts-btn:active {
-            transform: scale(0.96);
+        .dna-status-box {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: 16px;
+            background: linear-gradient(90deg, #fffbeb, #fdf2f8, #eef2ff);
+            border: 1.5px solid #fde68a;
+            font-size: 13px;
+            font-weight: 800;
+            color: #1e1b4b;
         }
     </style>
 
@@ -771,17 +808,6 @@
             sunset: { from: '#f97316', via: '#ec4899', to: '#e11d48' },
             ocean:  { from: '#06b6d4', via: '#3b82f6', to: '#4f46e5' },
             mint:   { from: '#10b981', via: '#14b8a6', to: '#0891b2' }
-        };
-
-        window.diagState = {
-            pratyushLoaded: false,
-            pratyushSource: 'Scanning...',
-            pratyushTried: [],
-            aarohiLoaded: false,
-            aarohiSource: 'Scanning...',
-            aarohiTried: [],
-            bakedPratyush: null,
-            bakedAarohi: null
         };
 
         window.audioCtx = null;
@@ -902,21 +928,24 @@
             if (window.cheerTotal % 5 === 0) window.launchConfetti();
         };
 
-        window.toggleTroubleshooter = function(forceState) {
-            const modal = document.getElementById('tsModalBackdrop');
-            if (!modal) return;
-            const isOpen = modal.style.display === 'flex';
-            const next = typeof forceState === 'boolean' ? forceState : !isOpen;
-            modal.style.display = next ? 'flex' : 'none';
-            if (next && typeof window.refreshTroubleshooterUI === 'function') {
-                window.refreshTroubleshooterUI();
-            }
-        };
+        window.babyMessages = [
+            "🧬 DNA Scan Complete: Pratyush's peace-sign swag ✌️ + Aarohi's Boss smile 👑 = 100% Cutest Future Baby!",
+            "🔬 AI Genetics Lab Report: 99.999% match! Inherited Pratyush's chill vibes & Aarohi's superstar glow! ✨",
+            "👶 Future Prediction Locked: Already voted 'Most Iconic Baby of the Future' by Pratyush x Aarohi! 🏆💖",
+            "🎉 Super-Synergy Detected: 50% Pratyush + 50% Aarohi = 1000% Unstoppable Legend! 🌟"
+        ];
+        window.babyMsgIndex = 0;
 
-        window.hideTroubleshooterButton = function() {
-            const fab = document.getElementById('tsFloatingBtn');
-            if (fab) fab.style.display = 'none';
-            window.toggleTroubleshooter(false);
+        window.rescanBabyDNA = function() {
+            const box = document.getElementById('babyDnaStatus');
+            if (!box) return;
+            box.textContent = '🔬 Scanning Pratyush x Aarohi DNA strands... 🧬';
+            window.playTone(480);
+            setTimeout(function() {
+                window.babyMsgIndex = (window.babyMsgIndex + 1) % window.babyMessages.length;
+                box.textContent = window.babyMessages[window.babyMsgIndex];
+                window.triggerCenterSparkle();
+            }, 420);
         };
     </script>
 </head>
@@ -932,10 +961,6 @@
 
     <!-- Confetti Canvas -->
     <canvas id="confettiCanvas"></canvas>
-
-    <!-- Hidden File Inputs for Troubleshooter Photo Baker -->
-    <input type="file" id="bakePratyushInput" accept="image/*" style="display:none;" onchange="handleBakeFile(event, 'pratyush')">
-    <input type="file" id="bakeAarohiInput" accept="image/*" style="display:none;" onchange="handleBakeFile(event, 'aarohi')">
 
     <!-- MAIN CONTENT WRAPPER -->
     <main class="page-wrapper">
@@ -982,11 +1007,11 @@
                 <div class="role-badge role-boy">👦 THE BOY</div>
 
                 <div class="photo-box">
-                    <img id="pratyushMainImg" src="1.jpg" alt="The Boy - Pratyush">
+                    <img id="pratyushMainImg" src="1.jpg" alt="Pratyush">
                     <div id="pratyushMissingOverlay" class="photo-missing-overlay">
-                        <div style="font-size: 40px; margin-bottom: 6px;">👦✌️</div>
-                        <div style="font-weight: 800; font-size: 16px;">Pratyush (1.jpg)</div>
-                        <div style="font-size: 11px; opacity: 0.85; margin-top: 4px;">Tap 🛠️ Troubleshooter below to link or bake 1.jpg</div>
+                        <div style="font-size: 44px; margin-bottom: 6px;">👦✌️</div>
+                        <div style="font-weight: 800; font-size: 18px;">Pratyush</div>
+                        <div style="font-size: 12px; opacity: 0.85; margin-top: 4px;">The Boy • Official Profile</div>
                     </div>
                 </div>
 
@@ -1017,11 +1042,11 @@
                 <div class="role-badge role-girl">👧 THE GIRL</div>
 
                 <div class="photo-box">
-                    <img id="aarohiMainImg" src="2.jpg" alt="The Girl - Aarohi">
+                    <img id="aarohiMainImg" src="2.jpg" alt="Aarohi">
                     <div id="aarohiMissingOverlay" class="photo-missing-overlay">
-                        <div style="font-size: 40px; margin-bottom: 6px;">👧🌸</div>
-                        <div style="font-weight: 800; font-size: 16px;">Aarohi (2.jpg)</div>
-                        <div style="font-size: 11px; opacity: 0.85; margin-top: 4px;">Tap 🛠️ Troubleshooter below to link or bake 2.jpg</div>
+                        <div style="font-size: 44px; margin-bottom: 6px;">👧🌸</div>
+                        <div style="font-weight: 800; font-size: 18px;">Aarohi</div>
+                        <div style="font-size: 12px; opacity: 0.85; margin-top: 4px;">The Girl • Official Profile</div>
                     </div>
                 </div>
 
@@ -1045,13 +1070,13 @@
         <section class="glass-card together-card">
             <div class="together-info">
                 <span style="display:inline-block; padding:4px 12px; border-radius:999px; background:linear-gradient(90deg,#4f46e5,#ec4899); color:#fff; font-size:11px; font-weight:800; text-transform:uppercase;">
-                    ⚡ Official Duo Showcase
+                    ⚡ Unstoppable Duo • Forever Iconic
                 </span>
                 <h3 style="font-size:28px; font-weight:900; color:#1e1b4b; margin:8px 0;">
                     Pratyush <span style="color:#ec4899;">x</span> Aarohi Together!
                 </h3>
                 <p style="font-size:14px; color:#475569; font-weight:500; margin-bottom:14px;">
-                    Side-by-side showcase of <strong>The Boy (Pratyush)</strong> and <strong>The Girl (Aarohi)</strong>.
+                    Side-by-side showcase of <strong>The Boy (Pratyush)</strong> and <strong>The Girl (Aarohi)</strong> — Unstoppable Duo • Forever iconic!
                 </p>
                 <button type="button" class="primary-btn" style="max-width:260px;" onclick="triggerCenterSparkle()">
                     ✨ Celebrate Pratyush x Aarohi!
@@ -1079,7 +1104,52 @@
             </div>
         </section>
 
-        <!-- 4. INTERACTIVE DUO METER & HIGHLIGHTS -->
+        <!-- 4. FUTURE BABY PREDICTION SECTION (3.jpg) -->
+        <section class="glass-card baby-card">
+            <div class="baby-lab-pill">
+                <span>🔬 AI Genetics Lab • 100% Guaranteed Accurate</span>
+            </div>
+            <h3 style="font-size: clamp(24px, 5vw, 36px); font-weight: 900; color: #1e1b4b;">
+                👶 Future Baby Prediction
+            </h3>
+            <p style="font-size: 14px; color: #475569; font-weight: 600; margin-top: 4px;">
+                Official Ultra-Advanced Genetic Simulation of <strong style="color:#4f46e5;">Pratyush</strong> + <strong style="color:#db2777;">Aarohi</strong>!
+            </p>
+
+            <div class="baby-layout">
+                <div class="baby-frame-wrap">
+                    <div class="baby-frame">
+                        <img id="babyMainImg" src="3.jpg" alt="Future Baby of Pratyush and Aarohi">
+                        <div id="babyMissingOverlay" class="photo-missing-overlay" style="background: linear-gradient(145deg, rgba(120, 53, 15, 0.95), rgba(157, 23, 77, 0.95));">
+                            <div style="font-size: 46px; margin-bottom: 6px;">👶✨</div>
+                            <div style="font-weight: 800; font-size: 16px;">Future Baby</div>
+                            <div style="font-size: 11px; opacity: 0.9; margin-top: 4px;">Pratyush x Aarohi Jr.</div>
+                        </div>
+                    </div>
+                    <span class="baby-crown-tag">👑 100% Verified Future Legend</span>
+                </div>
+
+                <div class="baby-details">
+                    <div class="dna-badges">
+                        <span class="dna-badge" style="background:#eef2ff; color:#3730a3; border:1.5px solid #c7d2fe;">🧬 50% Pratyush</span>
+                        <span class="dna-badge" style="background:#fdf2f8; color:#9d174d; border:1.5px solid #fbcfe8;">✨ 50% Aarohi</span>
+                        <span class="dna-badge" style="background:#fffbeb; color:#92400e; border:1.5px solid #fde68a;">🔥 100% Iconic</span>
+                    </div>
+
+                    <div id="babyDnaStatus" class="dna-status-box">
+                        🧬 DNA Scan Complete: Pratyush's peace-sign swag ✌️ + Aarohi's Boss smile 👑 = 100% Cutest Future Baby!
+                    </div>
+
+                    <div style="display:flex; flex-wrap:wrap; gap:10px; width:100%; margin-top:4px;">
+                        <button type="button" class="primary-btn" style="background: linear-gradient(90deg, #f59e0b, #ec4899, #6366f1);" onclick="rescanBabyDNA()">
+                            Re-Scan DNA Match 🎉
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. INTERACTIVE DUO METER & HIGHLIGHTS -->
         <section class="widgets-grid">
 
             <!-- Duo Power Meter -->
@@ -1166,327 +1236,185 @@
 
     </main>
 
-    <!-- ==========================================================================
-         BUILT-IN SMART TROUBLESHOOTER BUTTON & DIAGNOSTIC MODAL
-         ========================================================================== -->
-    <button type="button" id="tsFloatingBtn" class="troubleshooter-fab" onclick="toggleTroubleshooter()">
-        <span id="tsFabDot" class="ts-status-dot"></span>
-        <span>🛠️ Troubleshooter</span>
-    </button>
-
-    <div id="tsModalBackdrop" class="ts-modal-backdrop" onclick="if(event.target===this) toggleTroubleshooter(false)">
-        <div class="ts-modal-box">
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
-                <h3 style="font-size:18px; font-weight:900;">🛠️ GitHub Pages &amp; Google Sites Troubleshooter</h3>
-                <button type="button" onclick="toggleTroubleshooter(false)" style="border:none; background:#f1f5f9; width:32px; height:32px; border-radius:50%; font-weight:900; cursor:pointer;">✕</button>
-            </div>
-
-            <p style="font-size:12px; color:#475569; margin-bottom:14px;">
-                Live self-check for <strong>pcollection.github.io</strong> and <strong>Google Sites</strong>:
-            </p>
-
-            <!-- Diagnostic 1: Mobile Layout & Scroll -->
-            <div class="ts-diag-row">
-                <div>
-                    <div style="font-weight:800;">1. Mobile Layout &amp; Scroll Fix</div>
-                    <div style="color:#64748b; margin-top:2px;">Pure embedded CSS active (no external CDN dependencies). Background icons locked with <code>position: fixed</code>.</div>
-                </div>
-                <span class="ts-badge-ok">✅ FIXED</span>
-            </div>
-
-            <!-- Diagnostic 2: Pratyush Photo (1.jpg) -->
-            <div class="ts-diag-row">
-                <div>
-                    <div style="font-weight:800;">2. Pratyush Photo (<code>1.jpg</code>)</div>
-                    <div id="tsPratyushDetail" style="color:#64748b; margin-top:2px;">Checking 1.jpg...</div>
-                </div>
-                <span id="tsPratyushBadge" class="ts-badge-warn">Checking</span>
-            </div>
-
-            <!-- Diagnostic 3: Aarohi Photo (2.jpg) -->
-            <div class="ts-diag-row">
-                <div>
-                    <div style="font-weight:800;">3. Aarohi Photo (<code>2.jpg</code>)</div>
-                    <div id="tsAarohiDetail" style="color:#64748b; margin-top:2px;">Checking 2.jpg...</div>
-                </div>
-                <span id="tsAarohiBadge" class="ts-badge-warn">Checking</span>
-            </div>
-
-            <!-- Photo Baker Box (Solves Missing 1.jpg/2.jpg Permanently) -->
-            <div style="background:#f0fdf4; border:1.5px solid #bbf7d0; border-radius:16px; padding:14px; margin-top:14px;">
-                <div style="font-weight:900; font-size:13px; color:#14532d; margin-bottom:4px;">
-                    ⚡ Ultimate Fix: Bake Both Photos Directly Into index.html
-                </div>
-                <p style="font-size:11.5px; color:#166534; line-height:1.45; margin-bottom:10px;">
-                    If <code>1.jpg</code> or <code>2.jpg</code> isn't loading on GitHub Pages or Google Sites, pick both photos below. This converts them directly into code inside <code>index.html</code> (and hides this troubleshooter) so you only have to upload <strong>one file</strong>!
-                </p>
-
-                <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
-                    <button type="button" class="ts-btn" style="background:#4f46e5; color:#fff; flex:1;" onclick="document.getElementById('bakePratyushInput').click()">
-                        👦 1. Select Pratyush Photo
-                    </button>
-                    <button type="button" class="ts-btn" style="background:#ec4899; color:#fff; flex:1;" onclick="document.getElementById('bakeAarohiInput').click()">
-                        👧 2. Select Aarohi Photo
-                    </button>
-                </div>
-
-                <div style="display:flex; flex-wrap:wrap; gap:8px;">
-                    <button type="button" class="ts-btn" style="background:#15803d; color:#fff; flex:1;" onclick="downloadBakedHTML()">
-                        ⬇️ Download Ready index.html
-                    </button>
-                    <button type="button" class="ts-btn" style="background:#0f172a; color:#fff; flex:1;" onclick="copyBakedHTML()">
-                        📋 Copy Complete HTML
-                    </button>
-                </div>
-                <div id="tsBakeFeedback" style="font-size:11px; font-weight:800; color:#15803d; margin-top:8px; display:none;"></div>
-            </div>
-
-            <!-- Bottom Actions -->
-            <div style="display:flex; align-items:center; justify-content:space-between; margin-top:14px; padding-top:12px; border-top:1px solid #e2e8f0;">
-                <button type="button" class="ts-btn" style="background:#e2e8f0; color:#1e293b;" onclick="runAutoFix()">
-                    🔄 Re-Scan 1.jpg &amp; 2.jpg
-                </button>
-                <button type="button" class="ts-btn" style="background:#fee2e2; color:#991b1b;" onclick="hideTroubleshooterButton()">
-                    🙈 Hide Troubleshooter for Prank
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Photo Probing, Baker & Confetti Loop Script -->
+    <!-- Confetti & Audio Loop Script -->
     <script>
-        window.applyPhotoToDOM = function(person, src, sourceLabel) {
-            if (person === 'pratyush') {
-                const mainImg = document.getElementById('pratyushMainImg');
-                const miniImg = document.getElementById('pratyushMiniImg');
-                const overlay = document.getElementById('pratyushMissingOverlay');
-                if (mainImg) mainImg.src = src;
-                if (miniImg) miniImg.src = src;
-                if (overlay) overlay.style.display = 'none';
-                window.diagState.pratyushLoaded = true;
-                window.diagState.pratyushSource = sourceLabel || src;
-            } else if (person === 'aarohi') {
-                const mainImg = document.getElementById('aarohiMainImg');
-                const miniImg = document.getElementById('aarohiMiniImg');
-                const overlay = document.getElementById('aarohiMissingOverlay');
-                if (mainImg) mainImg.src = src;
-                if (miniImg) miniImg.src = src;
-                if (overlay) overlay.style.display = 'none';
-                window.diagState.aarohiLoaded = true;
-                window.diagState.aarohiSource = sourceLabel || src;
-            }
-            window.refreshTroubleshooterUI();
+        window.DUO_THEMES = {
+            cosmic: { from: '#4f46e5', via: '#9333ea', to: '#ec4899' },
+            sunset: { from: '#f97316', via: '#ec4899', to: '#e11d48' },
+            ocean:  { from: '#06b6d4', via: '#3b82f6', to: '#4f46e5' },
+            mint:   { from: '#10b981', via: '#14b8a6', to: '#0891b2' }
         };
 
-        window.markPhotoMissing = function(person) {
-            if (person === 'pratyush') {
-                const overlay = document.getElementById('pratyushMissingOverlay');
-                if (overlay) overlay.style.display = 'flex';
-                window.diagState.pratyushLoaded = false;
-                window.diagState.pratyushSource = 'Not found (upload 1.jpg or bake photo below)';
-            } else if (person === 'aarohi') {
-                const overlay = document.getElementById('aarohiMissingOverlay');
-                if (overlay) overlay.style.display = 'flex';
-                window.diagState.aarohiLoaded = false;
-                window.diagState.aarohiSource = 'Not found (upload 2.jpg or bake photo below)';
-            }
-            window.refreshTroubleshooterUI();
-        };
-
-        window.refreshTroubleshooterUI = function() {
-            const pDetail = document.getElementById('tsPratyushDetail');
-            const pBadge = document.getElementById('tsPratyushBadge');
-            const aDetail = document.getElementById('tsAarohiDetail');
-            const aBadge = document.getElementById('tsAarohiBadge');
-            const fabDot = document.getElementById('tsFabDot');
-
-            if (pDetail && pBadge) {
-                pDetail.textContent = window.diagState.pratyushLoaded
-                    ? 'Loaded successfully from: ' + window.diagState.pratyushSource
-                    : '1.jpg returned 404. Checked: ' + window.diagState.pratyushTried.join(', ');
-                pBadge.textContent = window.diagState.pratyushLoaded ? '✅ LOADED' : '⚠️ MISSING';
-                pBadge.className = window.diagState.pratyushLoaded ? 'ts-badge-ok' : 'ts-badge-warn';
-            }
-
-            if (aDetail && aBadge) {
-                aDetail.textContent = window.diagState.aarohiLoaded
-                    ? 'Loaded successfully from: ' + window.diagState.aarohiSource
-                    : '2.jpg returned 404. Checked: ' + window.diagState.aarohiTried.join(', ');
-                aBadge.textContent = window.diagState.aarohiLoaded ? '✅ LOADED' : '⚠️ MISSING';
-                aBadge.className = window.diagState.aarohiLoaded ? 'ts-badge-ok' : 'ts-badge-warn';
-            }
-
-            if (fabDot) {
-                fabDot.style.background = (window.diagState.pratyushLoaded && window.diagState.aarohiLoaded)
-                    ? '#10b981'
-                    : '#f59e0b';
-            }
-        };
-
-        // Probes multiple case-sensitive extensions for GitHub Pages
-        window.runAutoFix = function() {
-            const configs = [
-                {
-                    person: 'pratyush',
-                    storageKey: 'pratyush_baked_b64',
-                    candidates: ['1.jpg', './1.jpg', '1.JPG', '1.jpeg', '1.JPEG', '1.png', '1.PNG', 'pratyush.jpg', '868_2.jpg', '868.jpg', '791_2.jpg', '791.jpg', '790.jpg']
-                },
-                {
-                    person: 'aarohi',
-                    storageKey: 'aarohi_baked_b64',
-                    candidates: ['2.jpg', './2.jpg', '2.JPG', '2.jpeg', '2.JPEG', '2.png', '2.PNG', 'aarohi.jpg', '869_2.jpg', '869.jpg', '792_2.jpg', '792.jpg', '789.jpg']
-                }
-            ];
-
-            configs.forEach(function(cfg) {
-                // 1. Check if already baked in DOM src as data:image
-                const mainEl = document.getElementById(cfg.person === 'pratyush' ? 'pratyushMainImg' : 'aarohiMainImg');
-                if (mainEl && mainEl.getAttribute('src') && mainEl.getAttribute('src').indexOf('data:image') === 0) {
-                    window.applyPhotoToDOM(cfg.person, mainEl.getAttribute('src'), 'Embedded Base64 Photo');
-                    return;
-                }
-
-                // 2. Check localStorage
-                try {
-                    const saved = localStorage.getItem(cfg.storageKey) || localStorage.getItem(cfg.person + '_img');
-                    if (saved && saved.indexOf('data:image') === 0) {
-                        window.diagState[cfg.person === 'pratyush' ? 'bakedPratyush' : 'bakedAarohi'] = saved;
-                        window.applyPhotoToDOM(cfg.person, saved, 'Saved Browser Photo');
-                        return;
-                    }
-                } catch (e) {}
-
-                // 3. Probe candidate filenames on server
-                let idx = 0;
-                const triedList = cfg.person === 'pratyush' ? window.diagState.pratyushTried : window.diagState.aarohiTried;
-                triedList.length = 0;
-
-                function tryNext() {
-                    if (idx >= cfg.candidates.length) {
-                        window.markPhotoMissing(cfg.person);
-                        return;
-                    }
-                    const cand = cfg.candidates[idx++];
-                    triedList.push(cand);
-                    const probe = new Image();
-                    probe.onload = function() {
-                        window.applyPhotoToDOM(cfg.person, cand, cand);
-                    };
-                    probe.onerror = function() {
-                        tryNext();
-                    };
-                    probe.src = cand;
-                }
-                tryNext();
-            });
-        };
-
-        // Bake photo from user device into compressed Base64 data URL
-        window.handleBakeFile = function(event, person) {
-            const file = event.target.files && event.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                const img = new Image();
-                img.onload = function() {
-                    const MAX_SIDE = 550;
-                    let w = img.width;
-                    let h = img.height;
-                    if (w > h && w > MAX_SIDE) {
-                        h = Math.round(h * (MAX_SIDE / w));
-                        w = MAX_SIDE;
-                    } else if (h >= w && h > MAX_SIDE) {
-                        w = Math.round(w * (MAX_SIDE / h));
-                        h = MAX_SIDE;
-                    }
-                    const c = document.createElement('canvas');
-                    c.width = w;
-                    c.height = h;
-                    c.getContext('2d').drawImage(img, 0, 0, w, h);
-                    const dataUrl = c.toDataURL('image/jpeg', 0.86);
-
-                    if (person === 'pratyush') {
-                        window.diagState.bakedPratyush = dataUrl;
-                        try { localStorage.setItem('pratyush_baked_b64', dataUrl); } catch (err) {}
-                    } else {
-                        window.diagState.bakedAarohi = dataUrl;
-                        try { localStorage.setItem('aarohi_baked_b64', dataUrl); } catch (err) {}
-                    }
-
-                    window.applyPhotoToDOM(person, dataUrl, 'Baked Base64 Photo (' + file.name + ')');
-                    const fb = document.getElementById('tsBakeFeedback');
-                    if (fb) {
-                        fb.style.display = 'block';
-                        fb.textContent = '✅ ' + (person === 'pratyush' ? 'Pratyush' : 'Aarohi') + ' photo baked into page!';
-                    }
-                    window.triggerCenterSparkle();
-                };
-                img.src = e.target.result;
-            };
-            reader.readAsDataURL(file);
-        };
-
-        // Generate complete standalone HTML with baked photos and hidden troubleshooter
-        window.buildStandaloneHTML = function() {
-            const clone = document.documentElement.cloneNode(true);
-            const pSrc = window.diagState.bakedPratyush || document.getElementById('pratyushMainImg').getAttribute('src') || '1.jpg';
-            const aSrc = window.diagState.bakedAarohi || document.getElementById('aarohiMainImg').getAttribute('src') || '2.jpg';
-
-            ['pratyushMainImg', 'pratyushMiniImg'].forEach(function(id) {
-                const el = clone.querySelector('#' + id);
-                if (el) el.setAttribute('src', pSrc);
-            });
-            ['aarohiMainImg', 'aarohiMiniImg'].forEach(function(id) {
-                const el = clone.querySelector('#' + id);
-                if (el) el.setAttribute('src', aSrc);
-            });
-
-            // Hide missing overlays and troubleshooter UI in exported prank file
-            ['pratyushMissingOverlay', 'aarohiMissingOverlay', 'tsModalBackdrop', 'tsFloatingBtn'].forEach(function(id) {
-                const el = clone.querySelector('#' + id);
-                if (el) el.style.display = 'none';
-            });
-
-            return '<!DOCTYPE html>\n' + clone.outerHTML;
-        };
-
-        window.downloadBakedHTML = function() {
-            const htmlContent = window.buildStandaloneHTML();
-            const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'index.html';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            URL.revokeObjectURL(url);
-
-            const fb = document.getElementById('tsBakeFeedback');
-            if (fb) {
-                fb.style.display = 'block';
-                fb.textContent = '🎉 Downloaded index.html! Upload it to GitHub Pages or Google Sites!';
-            }
-        };
-
-        window.copyBakedHTML = function() {
-            const htmlContent = window.buildStandaloneHTML();
-            const ta = document.createElement('textarea');
-            ta.value = htmlContent;
-            document.body.appendChild(ta);
-            ta.select();
+        window.audioCtx = null;
+        window.playTone = function(freq) {
             try {
-                document.execCommand('copy');
-                const fb = document.getElementById('tsBakeFeedback');
-                if (fb) {
-                    fb.style.display = 'block';
-                    fb.textContent = '📋 Complete HTML copied to clipboard!';
-                }
+                const AC = window.AudioContext || window.webkitAudioContext;
+                if (!AC) return;
+                if (!window.audioCtx) window.audioCtx = new AC();
+                const ctx = window.audioCtx;
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(freq || 520, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime((freq || 520) * 1.35, ctx.currentTime + 0.08);
+                gain.gain.setValueAtTime(0.06, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.09);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.09);
             } catch (e) {}
-            document.body.removeChild(ta);
         };
 
-        // Confetti Animation Loop
+        window.setTheme = function(themeName) {
+            const t = window.DUO_THEMES[themeName] || window.DUO_THEMES.cosmic;
+            document.documentElement.style.setProperty('--bg-from', t.from);
+            document.documentElement.style.setProperty('--bg-via', t.via);
+            document.documentElement.style.setProperty('--bg-to', t.to);
+            window.playTone(580);
+        };
+
+        window.changeConnector = function(symbol) {
+            const ids = ['bannerSymbol', 'centerSymbol', 'duoCenterSymbol'];
+            ids.forEach(function(id) {
+                const el = document.getElementById(id);
+                if (el) el.textContent = symbol;
+            });
+            window.playTone(640);
+        };
+
+        window.particles = [];
+        window.launchConfetti = function() {
+            const colors = ['#ec4899', '#6366f1', '#facc15', '#38bdf8', '#a855f7', '#fb7185'];
+            const w = window.innerWidth || 360;
+            const h = window.innerHeight || 640;
+            for (let i = 0; i < 70; i++) {
+                window.particles.push({
+                    x: w / 2 + (Math.random() - 0.5) * 160,
+                    y: h / 2,
+                    vx: (Math.random() - 0.5) * 14,
+                    vy: (Math.random() - 1) * 14 - 3,
+                    size: Math.random() * 8 + 4,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    rotation: Math.random() * 360,
+                    vr: (Math.random() - 0.5) * 10,
+                    alpha: 1
+                });
+            }
+        };
+
+        window.triggerCenterSparkle = function() {
+            window.launchConfetti();
+            [523, 659, 784, 1046].forEach(function(n, i) {
+                setTimeout(function() { window.playTone(n); }, i * 80);
+            });
+        };
+
+        window.meterBusy = false;
+        window.duoQuotes = [
+            "100% LEGENDARY DUO! Pratyush x Aarohi are unstoppable! 🏆✨",
+            "100% CERTIFIED VIBES! Best Combination Ever! 💖🌟",
+            "INFINITY / 100! Maximum Duo Energy Reached! ⚡👑"
+        ];
+        window.quoteIdx = 0;
+
+        window.runDuoMeter = function() {
+            if (window.meterBusy) return;
+            window.meterBusy = true;
+            const bar = document.getElementById('duoProgressBar');
+            const pct = document.getElementById('duoPercentageText');
+            const msg = document.getElementById('duoStatusMessage');
+            if (!bar || !pct || !msg) {
+                window.meterBusy = false;
+                return;
+            }
+            let val = 0;
+            bar.style.width = '0%';
+            pct.textContent = '0%';
+            msg.textContent = 'Calculating Pratyush x Aarohi synergy... 🔍';
+
+            const timer = setInterval(function() {
+                val += Math.floor(Math.random() * 11) + 5;
+                if (val >= 100) {
+                    val = 100;
+                    clearInterval(timer);
+                    bar.style.width = '100%';
+                    bar.textContent = '100% MAX!';
+                    pct.textContent = '100% AWESOME!';
+                    msg.textContent = window.duoQuotes[window.quoteIdx % window.duoQuotes.length];
+                    window.quoteIdx++;
+                    window.meterBusy = false;
+                    window.triggerCenterSparkle();
+                } else {
+                    bar.style.width = val + '%';
+                    bar.textContent = val + '%';
+                    pct.textContent = val + '%';
+                    window.playTone(320 + val * 3);
+                }
+            }, 60);
+        };
+
+        window.cheerTotal = 0;
+        window.sendHighFive = function() {
+            window.cheerTotal++;
+            const badge = document.getElementById('cheerCountBadge');
+            if (badge) badge.textContent = window.cheerTotal;
+            window.playTone(720);
+            if (window.cheerTotal % 5 === 0) window.launchConfetti();
+        };
+
+        // Smart Silent Multi-Extension Image Loader (handles GitHub Pages case sensitivity for 1.jpg, 2.jpg, 3.jpg)
+        (function initSilentImageFallbacks() {
+            function bindSmartFallback(imgIds, overlayId, candidates) {
+                let idx = 0;
+                const primaryEl = document.getElementById(imgIds[0]);
+                if (!primaryEl) return;
+
+                function applySrcToAll(src) {
+                    imgIds.forEach(function(id) {
+                        const el = document.getElementById(id);
+                        if (el && el.getAttribute('src') !== src) {
+                            el.src = src;
+                        }
+                    });
+                }
+
+                primaryEl.onload = function() {
+                    const ov = overlayId ? document.getElementById(overlayId) : null;
+                    if (ov) ov.style.display = 'none';
+                };
+
+                primaryEl.onerror = function() {
+                    idx++;
+                    if (idx < candidates.length) {
+                        applySrcToAll(candidates[idx]);
+                    } else {
+                        const ov = overlayId ? document.getElementById(overlayId) : null;
+                        if (ov) ov.style.display = 'flex';
+                    }
+                };
+            }
+
+            bindSmartFallback(
+                ['pratyushMainImg', 'pratyushMiniImg'],
+                'pratyushMissingOverlay',
+                ['1.jpg', '1.JPG', '1.jpeg', '1.png', 'pratyush.jpg']
+            );
+
+            bindSmartFallback(
+                ['aarohiMainImg', 'aarohiMiniImg'],
+                'aarohiMissingOverlay',
+                ['2.jpg', '2.JPG', '2.jpeg', '2.png', 'aarohi.jpg']
+            );
+
+            bindSmartFallback(
+                ['babyMainImg'],
+                'babyMissingOverlay',
+                ['3.jpg', '3.JPG', '3.jpeg', '3.png', 'baby.jpg', 'baby.png']
+            );
+        })();
+
+        // Confetti Loop
         (function initConfetti() {
             const canvas = document.getElementById('confettiCanvas');
             if (!canvas) return;
@@ -1524,10 +1452,6 @@
             }
             loop();
         })();
-
-        window.addEventListener('DOMContentLoaded', function() {
-            window.runAutoFix();
-        });
     </script>
 </body>
 </html>
