@@ -3,37 +3,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Pratyush x Aarohi | Official Duo Page</title>
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
+        /* ==========================================================================
+           100% PURE VANILLA CSS (Zero External CDNs - Never Fails on GitHub Pages)
+           ========================================================================== */
         :root {
-            --bg-gradient-from: #4f46e5;
-            --bg-gradient-via: #9333ea;
-            --bg-gradient-to: #ec4899;
-            --card-bg: rgba(255, 255, 255, 0.92);
-            --accent-primary: #ec4899;
-            --accent-secondary: #6366f1;
-            --text-main: #1e1b4b;
+            --bg-from: #4f46e5;
+            --bg-via: #9333ea;
+            --bg-to: #ec4899;
+            --text-dark: #1e1b4b;
+            --text-muted: #475569;
+            --indigo-main: #4f46e5;
+            --indigo-light: #eef2ff;
+            --pink-main: #ec4899;
+            --pink-light: #fdf2f8;
+            --card-bg: rgba(255, 255, 255, 0.94);
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, var(--bg-gradient-from), var(--bg-gradient-via), var(--bg-gradient-to));
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html, body {
+            width: 100%;
+            min-height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            overflow-y: auto !important;
+            -webkit-overflow-scrolling: touch;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, var(--bg-from), var(--bg-via), var(--bg-to));
             background-size: 300% 300%;
             animation: gradientFlow 14s ease infinite;
-            min-height: 100vh;
-            color: var(--text-main);
-            overflow-x: hidden;
-        }
-
-        h1, h2, h3, .font-display {
-            font-family: 'Fredoka', sans-serif;
+            color: var(--text-dark);
         }
 
         @keyframes gradientFlow {
@@ -42,97 +50,721 @@
             100% { background-position: 0% 50%; }
         }
 
-        @keyframes floatSlow {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-8px) rotate(1.5deg); }
+        @keyframes floatCard {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
         }
 
         @keyframes pulseGlow {
             0%, 100% {
                 transform: scale(1);
-                box-shadow: 0 0 25px rgba(236, 72, 153, 0.75), 0 0 50px rgba(99, 102, 241, 0.55);
+                box-shadow: 0 0 20px rgba(236, 72, 153, 0.75), 0 0 40px rgba(99, 102, 241, 0.5);
             }
             50% {
-                transform: scale(1.1);
-                box-shadow: 0 0 40px rgba(236, 72, 153, 0.98), 0 0 75px rgba(250, 204, 21, 0.85);
+                transform: scale(1.08);
+                box-shadow: 0 0 32px rgba(236, 72, 153, 0.98), 0 0 60px rgba(250, 204, 21, 0.85);
             }
         }
 
         @keyframes sparkleSpin {
-            0% { transform: scale(0.8) rotate(0deg); opacity: 0.7; }
-            50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
-            100% { transform: scale(0.8) rotate(360deg); opacity: 0.7; }
+            0% { transform: scale(0.85) rotate(0deg); opacity: 0.45; }
+            50% { transform: scale(1.15) rotate(180deg); opacity: 0.75; }
+            100% { transform: scale(0.85) rotate(360deg); opacity: 0.45; }
         }
 
-        @keyframes heartBeatGlow {
-            0%, 100% {
-                transform: scale(1);
-                filter: drop-shadow(0 0 6px rgba(244, 63, 94, 0.8));
-            }
-            25% {
-                transform: scale(1.28);
-                filter: drop-shadow(0 0 14px rgba(251, 113, 133, 1));
-            }
-            50% {
-                transform: scale(1.08);
-                filter: drop-shadow(0 0 8px rgba(244, 63, 94, 0.9));
-            }
-            75% {
-                transform: scale(1.22);
-                filter: drop-shadow(0 0 14px rgba(251, 113, 133, 1));
-            }
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.26); }
+            50% { transform: scale(1.05); }
+            75% { transform: scale(1.2); }
         }
 
-        .float-card {
-            animation: floatSlow 5s ease-in-out infinite;
+        /* CRITICAL FIX: Decorative icons strictly fixed out of document flow */
+        .bg-decor-layer {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            pointer-events: none !important;
+            z-index: 0 !important;
+            overflow: hidden !important;
         }
 
-        .float-card-delayed {
-            animation: floatSlow 5s ease-in-out 2.5s infinite;
-        }
-
-        .x-badge-glow {
-            animation: pulseGlow 2.8s infinite ease-in-out;
-        }
-
-        .sparkle-icon {
-            animation: sparkleSpin 4s linear infinite;
-        }
-
-        .heart-pulse {
-            display: inline-block;
-            animation: heartBeatGlow 1.4s infinite ease-in-out;
-        }
-
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.90);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 2px solid rgba(255, 255, 255, 0.7);
-        }
-
-        .photo-frame {
-            position: relative;
-            overflow: hidden;
-            transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .photo-frame:hover {
-            transform: scale(1.03) rotate(-1deg);
+        .decor-item {
+            position: absolute;
+            font-size: 28px;
+            user-select: none;
+            animation: sparkleSpin 6s linear infinite;
         }
 
         #confettiCanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            pointer-events: none !important;
+            z-index: 90 !important;
+        }
+
+        /* Main Page Wrapper - Always at top of screen above background */
+        .page-wrapper {
+            position: relative;
+            z-index: 10;
+            max-width: 1020px;
+            margin: 0 auto;
+            padding: 14px 12px 60px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        @media (min-width: 640px) {
+            .page-wrapper {
+                padding: 24px 20px 70px 20px;
+                gap: 24px;
+            }
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 2px solid rgba(255, 255, 255, 0.78);
+            border-radius: 26px;
+            box-shadow: 0 16px 36px rgba(15, 23, 42, 0.22);
+        }
+
+        /* Top Bar */
+        .top-bar {
+            padding: 12px 18px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .brand-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 800;
+            font-size: 14px;
+            color: var(--text-dark);
+            letter-spacing: 0.4px;
+        }
+
+        .live-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ec4899;
+            box-shadow: 0 0 10px #ec4899;
+        }
+
+        .theme-group {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .theme-btn {
+            border: none;
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #fff;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            transition: transform 0.15s ease;
+        }
+
+        .theme-btn:active {
+            transform: scale(0.94);
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            padding: 22px 16px;
+            text-align: center;
+        }
+
+        @media (min-width: 640px) {
+            .hero-banner {
+                padding: 32px 28px;
+            }
+        }
+
+        .hero-top-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 16px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #e0e7ff, #f3e8ff, #fce7f3);
+            border: 1px solid #f9a8d4;
+            color: #312e81;
+            font-weight: 800;
+            font-size: 12px;
+            margin-bottom: 10px;
+        }
+
+        .hero-title {
+            font-size: clamp(32px, 8vw, 64px);
+            font-weight: 900;
+            line-height: 1.1;
+            background: linear-gradient(90deg, #4f46e5, #9333ea, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin: 6px 0 10px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(14px, 3.6vw, 18px);
+            color: var(--text-muted);
+            font-weight: 600;
+            max-width: 580px;
+            margin: 0 auto;
+        }
+
+        .connector-bar {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .conn-btn {
+            background: #ffffff;
+            border: 1.5px solid #e2e8f0;
+            color: #1e1b4b;
+            padding: 6px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .conn-btn:hover, .conn-btn:active {
+            border-color: #ec4899;
+            background: #fdf2f8;
+            transform: translateY(-1px);
+        }
+
+        /* Profile Cards Grid */
+        .duo-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .duo-grid {
+                grid-template-columns: 1fr auto 1fr;
+                gap: 20px;
+            }
+        }
+
+        .profile-card {
+            padding: 22px 18px;
+            text-align: center;
+            animation: floatCard 5s ease-in-out infinite;
+            user-select: none;
+        }
+
+        .profile-card.boy-card {
+            border-top: 8px solid #4f46e5;
+        }
+
+        .profile-card.girl-card {
+            border-top: 8px solid #ec4899;
+            animation-delay: 2.2s;
+        }
+
+        .role-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .role-boy { background: linear-gradient(90deg, #4f46e5, #6366f1); }
+        .role-girl { background: linear-gradient(90deg, #ec4899, #f43f5e); }
+
+        .photo-box {
+            width: 230px;
+            height: 250px;
+            max-width: 100%;
+            margin: 0 auto;
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            background: #1e1b4b;
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.22);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .boy-card .photo-box { border: 4px solid #4f46e5; }
+        .girl-card .photo-box { border: 4px solid #ec4899; background: #500724; }
+
+        .photo-box img {
             width: 100%;
             height: 100%;
-            pointer-events: none;
-            z-index: 50;
+            object-fit: cover;
+            display: block;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        /* Clean visual fallback inside photo-box only if image file is missing on server */
+        .photo-missing-overlay {
+            position: absolute;
+            inset: 0;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            text-align: center;
+            color: #ffffff;
+            background: linear-gradient(145deg, rgba(30, 27, 75, 0.95), rgba(88, 28, 135, 0.95));
+        }
+
+        .girl-card .photo-missing-overlay {
+            background: linear-gradient(145deg, rgba(131, 24, 67, 0.95), rgba(190, 24, 93, 0.95));
+        }
+
+        .profile-name {
+            font-size: 32px;
+            font-weight: 900;
+            color: #1e1b4b;
+            margin-top: 14px;
+        }
+
+        .profile-tagline {
+            font-size: 14px;
+            font-weight: 700;
+            margin-top: 4px;
+        }
+
+        .tag-pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 14px;
+        }
+
+        .tag-pill {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 5px 10px;
+            border-radius: 10px;
+        }
+
+        .official-lock-bar {
+            margin-top: 16px;
+            padding: 10px 14px;
+            border-radius: 14px;
+            font-size: 12px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        /* Center X Connector */
+        .center-x-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 4px 0;
+        }
+
+        .center-x-btn {
+            width: 82px;
+            height: 82px;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            background: linear-gradient(135deg, #4f46e5, #9333ea, #ec4899);
+            color: #ffffff;
+            font-size: 38px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            animation: pulseGlow 2.8s infinite ease-in-out;
+        }
+
+        .center-x-label {
+            background: #ffffff;
+            color: #db2777;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 5px 14px;
+            border-radius: 999px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            white-space: nowrap;
+        }
+
+        /* Together Showcase Section */
+        .together-card {
+            padding: 22px 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        @media (min-width: 768px) {
+            .together-card {
+                flex-direction: row;
+                padding: 26px 28px;
+            }
+        }
+
+        .together-info {
+            text-align: center;
+            max-width: 440px;
+        }
+
+        @media (min-width: 768px) {
+            .together-info {
+                text-align: left;
+            }
+        }
+
+        .together-photos-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: linear-gradient(90deg, #e0e7ff, #f3e8ff, #fce7f3);
+            padding: 14px;
+            border-radius: 24px;
+            border: 2px solid #ffffff;
+            box-shadow: inset 0 2px 6px rgba(0,0,0,0.06);
+        }
+
+        .mini-photo-frame {
+            width: 105px;
+            height: 112px;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            background: #1e1b4b;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.16);
+        }
+
+        @media (min-width: 640px) {
+            .mini-photo-frame {
+                width: 124px;
+                height: 130px;
+            }
+        }
+
+        .mini-photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .mini-heart-badge {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #4f46e5, #ec4899);
+            color: #fff;
+            font-size: 20px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 12px rgba(236,72,153,0.5);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        /* Bottom Widgets Grid (Meter + Highlights) */
+        .widgets-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+        }
+
+        @media (min-width: 768px) {
+            .widgets-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .widget-card {
+            padding: 22px 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .progress-track {
+            width: 100%;
+            height: 32px;
+            background: #e2e8f0;
+            border-radius: 16px;
+            padding: 4px;
+            overflow: hidden;
+            margin: 14px 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 100%;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #4f46e5, #9333ea, #ec4899);
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            transition: width 0.25s ease;
+        }
+
+        .meter-readout {
+            background: linear-gradient(90deg, #eef2ff, #faf5ff, #fdf2f8);
+            border: 1px solid #e9d5ff;
+            border-radius: 18px;
+            padding: 14px;
+            text-align: center;
+            margin-bottom: 14px;
+        }
+
+        .action-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .primary-btn {
+            flex: 1;
+            min-width: 160px;
+            border: none;
+            cursor: pointer;
+            padding: 13px 18px;
+            border-radius: 16px;
+            background: linear-gradient(90deg, #4f46e5, #9333ea, #ec4899);
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 14px;
+            box-shadow: 0 6px 16px rgba(147, 51, 234, 0.35);
+            transition: transform 0.15s ease;
+        }
+
+        .primary-btn:active {
+            transform: scale(0.96);
+        }
+
+        .cheer-btn {
+            border: none;
+            cursor: pointer;
+            padding: 13px 16px;
+            border-radius: 16px;
+            background: #facc15;
+            color: #1e1b4b;
+            font-weight: 800;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(250, 204, 21, 0.4);
+        }
+
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        @media (min-width: 500px) {
+            .highlights-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .highlight-item {
+            padding: 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            line-height: 1.45;
+        }
+
+        /* Footer Signature */
+        .footer-wrap {
+            text-align: center;
+            padding: 8px 0 20px 0;
+        }
+
+        .signature-pill {
+            display: inline-flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 26px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 2px solid #f472b6;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+            font-size: 16px;
+            font-weight: 800;
+            color: #1e1b4b;
+        }
+
+        .beating-heart {
+            display: inline-block;
+            animation: heartBeat 1.3s infinite ease-in-out;
+            font-size: 20px;
+        }
+
+        /* ==========================================================================
+           SMART TROUBLESHOOTER FLOATING BUTTON & MODAL
+           ========================================================================== */
+        .troubleshooter-fab {
+            position: fixed;
+            bottom: 14px;
+            right: 14px;
+            z-index: 95;
+            background: rgba(15, 23, 42, 0.88);
+            color: #ffffff;
+            border: 1.5px solid rgba(255, 255, 255, 0.35);
+            padding: 9px 14px;
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+            backdrop-filter: blur(8px);
+        }
+
+        .ts-status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+        }
+
+        .ts-modal-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.72);
+            backdrop-filter: blur(6px);
+            z-index: 100;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 14px;
+            overflow-y: auto;
+        }
+
+        .ts-modal-box {
+            background: #ffffff;
+            color: #0f172a;
+            width: 100%;
+            max-width: 560px;
+            border-radius: 24px;
+            padding: 20px;
+            box-shadow: 0 24px 48px rgba(0,0,0,0.4);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .ts-diag-row {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: 12px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            margin-bottom: 8px;
+            font-size: 12px;
+        }
+
+        .ts-badge-ok {
+            background: #dcfce7;
+            color: #166534;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 999px;
+            font-size: 11px;
+            white-space: nowrap;
+        }
+
+        .ts-badge-warn {
+            background: #fef3c7;
+            color: #92400e;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 999px;
+            font-size: 11px;
+            white-space: nowrap;
+        }
+
+        .ts-btn {
+            border: none;
+            cursor: pointer;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 800;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: transform 0.12s ease;
+        }
+
+        .ts-btn:active {
+            transform: scale(0.96);
         }
     </style>
 
-    <!-- Global Interactive Functions Attached in <head> to Prevent Any ReferenceError -->
+    <!-- All Global Handlers Defined in <head> so ReferenceError Can Never Occur -->
     <script>
         window.DUO_THEMES = {
             cosmic: { from: '#4f46e5', via: '#9333ea', to: '#ec4899' },
@@ -141,27 +773,30 @@
             mint:   { from: '#10b981', via: '#14b8a6', to: '#0891b2' }
         };
 
-        window.audioCtx = null;
-        window.getAudioContext = function() {
-            if (!window.audioCtx) {
-                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-                if (AudioContextClass) {
-                    window.audioCtx = new AudioContextClass();
-                }
-            }
-            return window.audioCtx;
+        window.diagState = {
+            pratyushLoaded: false,
+            pratyushSource: 'Scanning...',
+            pratyushTried: [],
+            aarohiLoaded: false,
+            aarohiSource: 'Scanning...',
+            aarohiTried: [],
+            bakedPratyush: null,
+            bakedAarohi: null
         };
 
-        window.playPopSound = function(freq = 500) {
+        window.audioCtx = null;
+        window.playTone = function(freq) {
             try {
-                const ctx = window.getAudioContext();
-                if (!ctx) return;
+                const AC = window.AudioContext || window.webkitAudioContext;
+                if (!AC) return;
+                if (!window.audioCtx) window.audioCtx = new AC();
+                const ctx = window.audioCtx;
                 const osc = ctx.createOscillator();
                 const gain = ctx.createGain();
                 osc.type = 'sine';
-                osc.frequency.setValueAtTime(freq, ctx.currentTime);
-                osc.frequency.exponentialRampToValueAtTime(freq * 1.4, ctx.currentTime + 0.08);
-                gain.gain.setValueAtTime(0.08, ctx.currentTime);
+                osc.frequency.setValueAtTime(freq || 520, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime((freq || 520) * 1.35, ctx.currentTime + 0.08);
+                gain.gain.setValueAtTime(0.06, ctx.currentTime);
                 gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.09);
                 osc.connect(gain);
                 gain.connect(ctx.destination);
@@ -170,44 +805,38 @@
             } catch (e) {}
         };
 
-        window.playCelebrationChime = function() {
-            const notes = [523.25, 659.25, 783.99, 1046.50];
-            notes.forEach((note, idx) => {
-                setTimeout(() => window.playPopSound(note), idx * 90);
-            });
-        };
-
         window.setTheme = function(themeName) {
-            const selected = window.DUO_THEMES[themeName] || window.DUO_THEMES.cosmic;
-            document.documentElement.style.setProperty('--bg-gradient-from', selected.from);
-            document.documentElement.style.setProperty('--bg-gradient-via', selected.via);
-            document.documentElement.style.setProperty('--bg-gradient-to', selected.to);
-            window.playPopSound(600);
+            const t = window.DUO_THEMES[themeName] || window.DUO_THEMES.cosmic;
+            document.documentElement.style.setProperty('--bg-from', t.from);
+            document.documentElement.style.setProperty('--bg-via', t.via);
+            document.documentElement.style.setProperty('--bg-to', t.to);
+            window.playTone(580);
         };
 
         window.changeConnector = function(symbol) {
-            const centerEl = document.getElementById('centerSymbol');
-            const bannerEl = document.getElementById('bannerSymbol');
-            const duoCenterEl = document.getElementById('duoCenterSymbol');
-            if (centerEl) centerEl.textContent = symbol;
-            if (bannerEl) bannerEl.textContent = symbol.toLowerCase();
-            if (duoCenterEl) duoCenterEl.textContent = symbol;
-            window.playPopSound(520);
+            const ids = ['bannerSymbol', 'centerSymbol', 'duoCenterSymbol'];
+            ids.forEach(function(id) {
+                const el = document.getElementById(id);
+                if (el) el.textContent = symbol;
+            });
+            window.playTone(640);
         };
 
         window.particles = [];
         window.launchConfetti = function() {
             const colors = ['#ec4899', '#6366f1', '#facc15', '#38bdf8', '#a855f7', '#fb7185'];
-            for (let i = 0; i < 85; i++) {
+            const w = window.innerWidth || 360;
+            const h = window.innerHeight || 640;
+            for (let i = 0; i < 70; i++) {
                 window.particles.push({
-                    x: window.innerWidth / 2 + (Math.random() - 0.5) * 200,
-                    y: window.innerHeight / 2,
-                    vx: (Math.random() - 0.5) * 16,
-                    vy: (Math.random() - 1) * 16 - 4,
-                    size: Math.random() * 8 + 5,
+                    x: w / 2 + (Math.random() - 0.5) * 160,
+                    y: h / 2,
+                    vx: (Math.random() - 0.5) * 14,
+                    vy: (Math.random() - 1) * 14 - 3,
+                    size: Math.random() * 8 + 4,
                     color: colors[Math.floor(Math.random() * colors.length)],
                     rotation: Math.random() * 360,
-                    vr: (Math.random() - 0.5) * 12,
+                    vr: (Math.random() - 0.5) * 10,
                     alpha: 1
                 });
             }
@@ -215,560 +844,689 @@
 
         window.triggerCenterSparkle = function() {
             window.launchConfetti();
-            window.playCelebrationChime();
+            [523, 659, 784, 1046].forEach(function(n, i) {
+                setTimeout(function() { window.playTone(n); }, i * 80);
+            });
         };
 
-        window.meterRunning = false;
-        window.duoMessages = [
+        window.meterBusy = false;
+        window.duoQuotes = [
             "100% LEGENDARY DUO! Pratyush x Aarohi are unstoppable! 🏆✨",
-            "100% AWESOME VIBES! Certified Best Combo Ever! 🌟🚀",
-            "INFINITY / 100! Maximum Coolness Level Reached! ⚡👑"
+            "100% CERTIFIED VIBES! Best Combination Ever! 💖🌟",
+            "INFINITY / 100! Maximum Duo Energy Reached! ⚡👑"
         ];
-        window.msgIndex = 0;
+        window.quoteIdx = 0;
 
         window.runDuoMeter = function() {
-            if (window.meterRunning) return;
-            window.meterRunning = true;
-
+            if (window.meterBusy) return;
+            window.meterBusy = true;
             const bar = document.getElementById('duoProgressBar');
-            const pctText = document.getElementById('duoPercentageText');
-            const statusMsg = document.getElementById('duoStatusMessage');
-            if (!bar || !pctText || !statusMsg) {
-                window.meterRunning = false;
+            const pct = document.getElementById('duoPercentageText');
+            const msg = document.getElementById('duoStatusMessage');
+            if (!bar || !pct || !msg) {
+                window.meterBusy = false;
                 return;
             }
-
+            let val = 0;
             bar.style.width = '0%';
-            pctText.textContent = '0%';
-            statusMsg.textContent = 'Scanning Pratyush x Aarohi energy levels... 🔍';
+            pct.textContent = '0%';
+            msg.textContent = 'Calculating Pratyush x Aarohi synergy... 🔍';
 
-            let current = 0;
-            const interval = setInterval(() => {
-                current += Math.floor(Math.random() * 9) + 4;
-                if (current >= 100) {
-                    current = 100;
-                    clearInterval(interval);
+            const timer = setInterval(function() {
+                val += Math.floor(Math.random() * 11) + 5;
+                if (val >= 100) {
+                    val = 100;
+                    clearInterval(timer);
                     bar.style.width = '100%';
                     bar.textContent = '100% MAX!';
-                    pctText.textContent = '100% AWESOME!';
-                    statusMsg.textContent = window.duoMessages[window.msgIndex % window.duoMessages.length];
-                    window.msgIndex++;
-                    window.meterRunning = false;
-                    window.launchConfetti();
-                    window.playCelebrationChime();
+                    pct.textContent = '100% AWESOME!';
+                    msg.textContent = window.duoQuotes[window.quoteIdx % window.duoQuotes.length];
+                    window.quoteIdx++;
+                    window.meterBusy = false;
+                    window.triggerCenterSparkle();
                 } else {
-                    bar.style.width = current + '%';
-                    bar.textContent = current + '%';
-                    pctText.textContent = current + '%';
-                    window.playPopSound(300 + current * 4);
+                    bar.style.width = val + '%';
+                    bar.textContent = val + '%';
+                    pct.textContent = val + '%';
+                    window.playTone(320 + val * 3);
                 }
-            }, 65);
+            }, 60);
         };
 
-        window.cheerCount = 0;
+        window.cheerTotal = 0;
         window.sendHighFive = function() {
-            window.cheerCount++;
+            window.cheerTotal++;
             const badge = document.getElementById('cheerCountBadge');
-            if (badge) badge.textContent = window.cheerCount;
-            window.playPopSound(700);
-            if (window.cheerCount % 5 === 0) {
-                window.launchConfetti();
+            if (badge) badge.textContent = window.cheerTotal;
+            window.playTone(720);
+            if (window.cheerTotal % 5 === 0) window.launchConfetti();
+        };
+
+        window.toggleTroubleshooter = function(forceState) {
+            const modal = document.getElementById('tsModalBackdrop');
+            if (!modal) return;
+            const isOpen = modal.style.display === 'flex';
+            const next = typeof forceState === 'boolean' ? forceState : !isOpen;
+            modal.style.display = next ? 'flex' : 'none';
+            if (next && typeof window.refreshTroubleshooterUI === 'function') {
+                window.refreshTroubleshooterUI();
             }
+        };
+
+        window.hideTroubleshooterButton = function() {
+            const fab = document.getElementById('tsFloatingBtn');
+            if (fab) fab.style.display = 'none';
+            window.toggleTroubleshooter(false);
         };
     </script>
 </head>
-<body class="p-4 sm:p-6 md:p-10 selection:bg-pink-500 selection:text-white">
+<body>
 
-    <!-- Hidden File Inputs for Silent Click-on-Frame Preview Persistence -->
-    <input type="file" id="pratyushFileInput" accept="image/*" class="hidden" onchange="handleSilentPhotoSelect(event, 'pratyush')">
-    <input type="file" id="aarohiFileInput" accept="image/*" class="hidden" onchange="handleSilentPhotoSelect(event, 'aarohi')">
-
-    <!-- Confetti Overlay Canvas -->
-    <canvas id="confettiCanvas"></canvas>
-
-    <!-- Floating Decorative Background Shapes -->
-    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
-        <div class="absolute top-12 left-8 text-yellow-300/60 text-3xl sparkle-icon"><i class="fa-solid fa-star"></i></div>
-        <div class="absolute top-28 right-12 text-pink-300/60 text-4xl sparkle-icon" style="animation-delay: 1s;"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-        <div class="absolute bottom-20 left-16 text-cyan-300/50 text-3xl sparkle-icon" style="animation-delay: 2s;"><i class="fa-solid fa-bolt"></i></div>
-        <div class="absolute bottom-32 right-20 text-yellow-200/60 text-4xl sparkle-icon" style="animation-delay: 1.5s;"><i class="fa-solid fa-star"></i></div>
+    <!-- Strictly Fixed Background Sparkles (Never pushes content down on mobile) -->
+    <div class="bg-decor-layer" aria-hidden="true">
+        <div class="decor-item" style="top: 6%; left: 7%;">⭐</div>
+        <div class="decor-item" style="top: 15%; right: 8%; animation-delay: 1.2s;">🪄</div>
+        <div class="decor-item" style="bottom: 14%; left: 9%; animation-delay: 2.4s;">⚡</div>
+        <div class="decor-item" style="bottom: 18%; right: 10%; animation-delay: 1.8s;">⭐</div>
     </div>
 
-    <!-- Main Container -->
-    <div class="max-w-5xl mx-auto relative z-10 space-y-8">
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
 
-        <!-- Top Controls & Theme Switcher Bar -->
-        <div class="glass-panel rounded-3xl p-3 sm:px-6 flex flex-wrap items-center justify-between gap-4 shadow-xl">
-            <div class="flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-pink-500 animate-ping"></span>
-                <span class="font-display font-bold text-sm sm:text-base text-indigo-950 tracking-wide">
-                    PRATYUSH x AAROHI OFFICIAL ✨
-                </span>
+    <!-- Hidden File Inputs for Troubleshooter Photo Baker -->
+    <input type="file" id="bakePratyushInput" accept="image/*" style="display:none;" onchange="handleBakeFile(event, 'pratyush')">
+    <input type="file" id="bakeAarohiInput" accept="image/*" style="display:none;" onchange="handleBakeFile(event, 'aarohi')">
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <main class="page-wrapper">
+
+        <!-- TOP BAR -->
+        <nav class="glass-card top-bar">
+            <div class="brand-pill">
+                <span class="live-dot"></span>
+                <span>✨ Pratyush x Aarohi ✨</span>
             </div>
-
-            <!-- Theme Switcher Buttons -->
-            <div class="flex items-center gap-2 flex-wrap">
-                <span class="text-xs font-semibold uppercase tracking-wider text-slate-600 mr-1">Vibe Theme:</span>
-                <button type="button" onclick="setTheme('cosmic')" class="px-3 py-1.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-indigo-600 to-pink-500 shadow hover:scale-105 transition active:scale-95">
-                    🌌 Cosmic
-                </button>
-                <button type="button" onclick="setTheme('sunset')" class="px-3 py-1.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-orange-500 via-pink-500 to-rose-500 shadow hover:scale-105 transition active:scale-95">
-                    🌅 Sunset
-                </button>
-                <button type="button" onclick="setTheme('ocean')" class="px-3 py-1.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-600 shadow hover:scale-105 transition active:scale-95">
-                    🌊 Ocean
-                </button>
-                <button type="button" onclick="setTheme('mint')" class="px-3 py-1.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 shadow hover:scale-105 transition active:scale-95">
-                    🍀 Minty
-                </button>
+            <div class="theme-group">
+                <button type="button" onclick="setTheme('cosmic')" class="theme-btn" style="background: linear-gradient(90deg, #4f46e5, #ec4899);">🌌 Cosmic</button>
+                <button type="button" onclick="setTheme('sunset')" class="theme-btn" style="background: linear-gradient(90deg, #f97316, #e11d48);">🌅 Sunset</button>
+                <button type="button" onclick="setTheme('ocean')" class="theme-btn" style="background: linear-gradient(90deg, #06b6d4, #4f46e5);">🌊 Ocean</button>
+                <button type="button" onclick="setTheme('mint')" class="theme-btn" style="background: linear-gradient(90deg, #10b981, #0891b2);">🍀 Minty</button>
             </div>
-        </div>
+        </nav>
 
-        <!-- 1. Central Header Banner -->
-        <header class="glass-panel rounded-3xl p-6 sm:p-10 text-center shadow-2xl relative overflow-hidden">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 border border-pink-200 text-indigo-900 font-bold text-xs sm:text-sm mb-4 shadow-sm">
-                <i class="fa-solid fa-crown text-amber-500"></i>
-                <span>THE BOY (PRATYUSH) &amp; THE GIRL (AAROHI)</span>
-                <i class="fa-solid fa-heart text-pink-500"></i>
+        <!-- 1. HERO HEADER BANNER -->
+        <header class="glass-card hero-banner">
+            <div class="hero-top-pill">
+                <span>👑 THE BOY (PRATYUSH) &amp; THE GIRL (AAROHI) 💖</span>
             </div>
-
-            <h1 class="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 drop-shadow-sm py-2">
-                Pratyush <span id="bannerSymbol" class="text-pink-500 inline-block mx-1">x</span> Aarohi
+            <h1 class="hero-title">
+                Pratyush <span id="bannerSymbol" style="color: #ec4899;">X</span> Aarohi
             </h1>
-
-            <p class="text-slate-600 font-medium text-sm sm:text-lg max-w-xl mx-auto mt-2">
-                The Boy is <span class="font-bold text-indigo-600">Pratyush</span> ✌️ &amp; The Girl is <span class="font-bold text-pink-600">Aarohi</span> 🌸 — 100% Iconic Duo!
+            <p class="hero-subtitle">
+                The Boy that's <strong style="color:#4f46e5;">Pratyush</strong> ✌️ &amp; The Girl that is <strong style="color:#db2777;">Aarohi</strong> 🌸 — Official Duo Page!
             </p>
-
-            <!-- Quick Symbol Customizer -->
-            <div class="mt-5 flex justify-center items-center gap-2 flex-wrap">
-                <span class="text-xs font-semibold text-slate-500">Center Symbol:</span>
-                <button type="button" onclick="changeConnector('X')" class="px-3 py-1 rounded-xl bg-white border border-slate-200 text-xs font-bold text-indigo-900 hover:bg-pink-50 hover:border-pink-300 transition shadow-sm">Pratyush X Aarohi</button>
-                <button type="button" onclick="changeConnector('&')" class="px-3 py-1 rounded-xl bg-white border border-slate-200 text-xs font-bold text-indigo-900 hover:bg-pink-50 hover:border-pink-300 transition shadow-sm">Pratyush &amp; Aarohi</button>
-                <button type="button" onclick="changeConnector('⚡')" class="px-3 py-1 rounded-xl bg-white border border-slate-200 text-xs font-bold text-indigo-900 hover:bg-pink-50 hover:border-pink-300 transition shadow-sm">Pratyush ⚡ Aarohi</button>
-                <button type="button" onclick="changeConnector('★')" class="px-3 py-1 rounded-xl bg-white border border-slate-200 text-xs font-bold text-indigo-900 hover:bg-pink-50 hover:border-pink-300 transition shadow-sm">Pratyush ★ Aarohi</button>
+            <div class="connector-bar">
+                <button type="button" class="conn-btn" onclick="changeConnector('X')">Pratyush X Aarohi</button>
+                <button type="button" class="conn-btn" onclick="changeConnector('❤️')">Pratyush ❤️ Aarohi</button>
+                <button type="button" class="conn-btn" onclick="changeConnector('&')">Pratyush &amp; Aarohi</button>
+                <button type="button" class="conn-btn" onclick="changeConnector('⚡')">Pratyush ⚡ Aarohi</button>
+                <button type="button" class="conn-btn" onclick="changeConnector('★')">Pratyush ★ Aarohi</button>
             </div>
         </header>
 
-        <!-- 2. Side-by-Side Profile Cards with Glowing "X" Between Them -->
-        <section class="grid grid-cols-1 md:grid-cols-11 gap-6 items-center">
+        <!-- 2. MAIN PROFILE CARDS: PRATYUSH (THE BOY) x AAROHI (THE GIRL) -->
+        <section class="duo-grid">
 
-            <!-- CARD 1: PRATYUSH (THE BOY) -->
-            <div class="md:col-span-5 glass-panel rounded-3xl p-6 sm:p-8 shadow-2xl text-center relative float-card border-t-8 border-t-indigo-500 select-none">
-                <!-- Top Role Pill -->
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-indigo-600 text-white font-bold text-xs sm:text-sm uppercase tracking-wider mb-4 shadow-md">
-                    <i class="fa-solid fa-boy"></i>
-                    <span>THE BOY</span>
+            <!-- CARD 1: THE BOY - PRATYUSH -->
+            <article class="glass-card profile-card boy-card">
+                <div class="role-badge role-boy">👦 THE BOY</div>
+
+                <div class="photo-box">
+                    <img id="pratyushMainImg" src="1.jpg" alt="The Boy - Pratyush">
+                    <div id="pratyushMissingOverlay" class="photo-missing-overlay">
+                        <div style="font-size: 40px; margin-bottom: 6px;">👦✌️</div>
+                        <div style="font-weight: 800; font-size: 16px;">Pratyush (1.jpg)</div>
+                        <div style="font-size: 11px; opacity: 0.85; margin-top: 4px;">Tap 🛠️ Troubleshooter below to link or bake 1.jpg</div>
+                    </div>
                 </div>
 
-                <!-- Photo Frame for Pratyush -->
-                <div onclick="document.getElementById('pratyushFileInput').click()"
-                     class="photo-frame w-60 h-64 sm:w-68 sm:h-72 mx-auto rounded-3xl border-4 border-indigo-500 shadow-2xl bg-indigo-950 relative flex items-center justify-center overflow-hidden cursor-pointer"
-                     title="Pratyush — The Boy">
-                    <img id="pratyushImg"
-                         src="1.jpg"
-                         alt="The Boy - Pratyush"
-                         draggable="false"
-                         class="w-full h-full object-cover select-none block">
+                <h2 class="profile-name">Pratyush</h2>
+                <p class="profile-tagline" style="color: #4f46e5;">👦 That's The Boy • Pratyush!</p>
+
+                <div class="tag-pills">
+                    <span class="tag-pill" style="background:#eef2ff; color:#4338ca; border:1px solid #c7d2fe;">✌️ Peace Sign Pose</span>
+                    <span class="tag-pill" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe;">💙 Navy Vibe</span>
+                    <span class="tag-pill" style="background:#faf5ff; color:#7e22ce; border:1px solid #e9d5ff;">🌟 The Boy</span>
                 </div>
 
-                <!-- Name & Title (Locked) -->
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-indigo-950 mt-5">
-                    Pratyush
-                </h2>
-                <p class="text-indigo-600 font-bold text-sm sm:text-base mt-1">
-                    👦 That's The Boy • Pratyush!
-                </p>
-
-                <!-- Fun Trait Badges -->
-                <div class="flex flex-wrap justify-center gap-2 mt-4">
-                    <span class="px-3 py-1 rounded-xl bg-indigo-50 text-indigo-700 font-semibold text-xs border border-indigo-200">✌️ Peace Sign Pose</span>
-                    <span class="px-3 py-1 rounded-xl bg-blue-50 text-blue-700 font-semibold text-xs border border-blue-200">💙 Navy Shirt Vibe</span>
-                    <span class="px-3 py-1 rounded-xl bg-purple-50 text-purple-700 font-semibold text-xs border border-purple-200">🌟 The Boy</span>
+                <div class="official-lock-bar" style="background:#eef2ff; color:#3730a3; border:1px solid #c7d2fe;">
+                    <span>🛡️ Official Locked Profile • Pratyush</span>
                 </div>
+            </article>
 
-                <!-- Locked Official Badge -->
-                <div class="mt-5 w-full py-2.5 px-4 rounded-2xl bg-indigo-50 border border-indigo-200 text-indigo-800 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm">
-                    <i class="fa-solid fa-shield-heart text-indigo-600"></i>
-                    <span>Official Profile • Pratyush</span>
-                </div>
-            </div>
-
-            <!-- CENTER GLOWING "X" SYMBOL -->
-            <div class="md:col-span-1 flex flex-col items-center justify-center py-2">
-                <button type="button" onclick="triggerCenterSparkle()"
-                        title="Click for a burst of sparkles!"
-                        class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 text-white font-display text-4xl sm:text-5xl font-bold flex items-center justify-center border-4 border-white x-badge-glow cursor-pointer select-none transition transform active:scale-90">
+            <!-- CENTER GLOWING CONNECTOR -->
+            <div class="center-x-wrap">
+                <button type="button" class="center-x-btn" onclick="triggerCenterSparkle()" title="Tap for sparkles!">
                     <span id="centerSymbol">X</span>
                 </button>
-                <span class="mt-2 px-3 py-1 rounded-full bg-white text-pink-600 font-extrabold text-xs shadow-md whitespace-nowrap select-none">
-                    Pratyush x Aarohi
+                <span class="center-x-label">Pratyush x Aarohi</span>
+            </div>
+
+            <!-- CARD 2: THE GIRL - AAROHI -->
+            <article class="glass-card profile-card girl-card">
+                <div class="role-badge role-girl">👧 THE GIRL</div>
+
+                <div class="photo-box">
+                    <img id="aarohiMainImg" src="2.jpg" alt="The Girl - Aarohi">
+                    <div id="aarohiMissingOverlay" class="photo-missing-overlay">
+                        <div style="font-size: 40px; margin-bottom: 6px;">👧🌸</div>
+                        <div style="font-weight: 800; font-size: 16px;">Aarohi (2.jpg)</div>
+                        <div style="font-size: 11px; opacity: 0.85; margin-top: 4px;">Tap 🛠️ Troubleshooter below to link or bake 2.jpg</div>
+                    </div>
+                </div>
+
+                <h2 class="profile-name">Aarohi</h2>
+                <p class="profile-tagline" style="color: #db2777;">👧 That's The Girl • Aarohi!</p>
+
+                <div class="tag-pills">
+                    <span class="tag-pill" style="background:#fdf2f8; color:#be185d; border:1px solid #fbcfe8;">👑 Boss Energy</span>
+                    <span class="tag-pill" style="background:#fff1f2; color:#be123c; border:1px solid #fecdd3;">🌿 Nature Glow</span>
+                    <span class="tag-pill" style="background:#fffbeb; color:#b45309; border:1px solid #fde68a;">✨ The Girl</span>
+                </div>
+
+                <div class="official-lock-bar" style="background:#fdf2f8; color:#9d174d; border:1px solid #fbcfe8;">
+                    <span>🛡️ Official Locked Profile • Aarohi</span>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- 3. PRATYUSH X AAROHI TOGETHER SHOWCASE -->
+        <section class="glass-card together-card">
+            <div class="together-info">
+                <span style="display:inline-block; padding:4px 12px; border-radius:999px; background:linear-gradient(90deg,#4f46e5,#ec4899); color:#fff; font-size:11px; font-weight:800; text-transform:uppercase;">
+                    ⚡ Official Duo Showcase
                 </span>
-            </div>
-
-            <!-- CARD 2: AAROHI (THE GIRL) -->
-            <div class="md:col-span-5 glass-panel rounded-3xl p-6 sm:p-8 shadow-2xl text-center relative float-card-delayed border-t-8 border-t-pink-500 select-none">
-                <!-- Top Role Pill -->
-                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-500 text-white font-bold text-xs sm:text-sm uppercase tracking-wider mb-4 shadow-md">
-                    <i class="fa-solid fa-girl"></i>
-                    <span>THE GIRL</span>
-                </div>
-
-                <!-- Photo Frame for Aarohi -->
-                <div onclick="document.getElementById('aarohiFileInput').click()"
-                     class="photo-frame w-60 h-64 sm:w-68 sm:h-72 mx-auto rounded-3xl border-4 border-pink-500 shadow-2xl bg-pink-950 relative flex items-center justify-center overflow-hidden cursor-pointer"
-                     title="Aarohi — The Girl">
-                    <img id="aarohiImg"
-                         src="2.jpg"
-                         alt="The Girl - Aarohi"
-                         draggable="false"
-                         class="w-full h-full object-cover select-none block">
-                </div>
-
-                <!-- Name & Title (Locked) -->
-                <h2 class="font-display text-3xl sm:text-4xl font-bold text-indigo-950 mt-5">
-                    Aarohi
-                </h2>
-                <p class="text-pink-600 font-bold text-sm sm:text-base mt-1">
-                    👧 That's The Girl • Aarohi!
+                <h3 style="font-size:28px; font-weight:900; color:#1e1b4b; margin:8px 0;">
+                    Pratyush <span style="color:#ec4899;">x</span> Aarohi Together!
+                </h3>
+                <p style="font-size:14px; color:#475569; font-weight:500; margin-bottom:14px;">
+                    Side-by-side showcase of <strong>The Boy (Pratyush)</strong> and <strong>The Girl (Aarohi)</strong>.
                 </p>
-
-                <!-- Fun Trait Badges -->
-                <div class="flex flex-wrap justify-center gap-2 mt-4">
-                    <span class="px-3 py-1 rounded-xl bg-pink-50 text-pink-700 font-semibold text-xs border border-pink-200">👑 Boss Shirt Energy</span>
-                    <span class="px-3 py-1 rounded-xl bg-rose-50 text-rose-700 font-semibold text-xs border border-rose-200">🌿 Nature Glow</span>
-                    <span class="px-3 py-1 rounded-xl bg-amber-50 text-amber-700 font-semibold text-xs border border-amber-200">✨ The Girl</span>
-                </div>
-
-                <!-- Locked Official Badge -->
-                <div class="mt-5 w-full py-2.5 px-4 rounded-2xl bg-pink-50 border border-pink-200 text-pink-800 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 shadow-sm">
-                    <i class="fa-solid fa-shield-heart text-pink-600"></i>
-                    <span>Official Profile • Aarohi</span>
-                </div>
+                <button type="button" class="primary-btn" style="max-width:260px;" onclick="triggerCenterSparkle()">
+                    ✨ Celebrate Pratyush x Aarohi!
+                </button>
             </div>
 
-        </section>
-
-        <!-- 2.5 Combined "Pratyush x Aarohi Together" Side-by-Side Showcase Card -->
-        <section class="glass-panel rounded-3xl p-6 sm:p-8 shadow-2xl border-2 border-pink-300/80 relative overflow-hidden select-none">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <!-- Left Text Info -->
-                <div class="text-center md:text-left space-y-2 max-w-md">
-                    <span class="inline-block px-3 py-1 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 text-white font-bold text-xs uppercase tracking-wider shadow">
-                        ⚡ Official Duo Showcase
-                    </span>
-                    <h3 class="font-display text-3xl sm:text-4xl font-bold text-indigo-950">
-                        Pratyush <span class="text-pink-500">x</span> Aarohi Together!
-                    </h3>
-                    <p class="text-slate-600 text-sm font-medium">
-                        Side-by-side duo showcase featuring <strong>The Boy (Pratyush)</strong> and <strong>The Girl (Aarohi)</strong>.
-                    </p>
-                    <div class="pt-2 flex flex-wrap justify-center md:justify-start gap-2">
-                        <button type="button" onclick="triggerCenterSparkle()" class="px-5 py-2.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-pink-500 hover:from-indigo-700 hover:to-pink-600 text-white font-bold text-xs sm:text-sm shadow-md transition active:scale-95 flex items-center gap-2">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                            <span>Celebrate Pratyush x Aarohi!</span>
-                        </button>
+            <div class="together-photos-box">
+                <div style="text-align:center;">
+                    <div class="mini-photo-frame" style="border:3px solid #4f46e5;">
+                        <img id="pratyushMiniImg" src="1.jpg" alt="Pratyush">
                     </div>
+                    <span style="display:block; font-size:12px; font-weight:800; color:#312e81; margin-top:6px;">Pratyush</span>
                 </div>
 
-                <!-- Right Combined Duo Photo Showcase -->
-                <div class="flex items-center justify-center gap-3 sm:gap-5 bg-gradient-to-r from-indigo-100 via-purple-100 to-pink-100 p-4 sm:p-5 rounded-3xl border-2 border-white shadow-inner">
-                    <!-- Mini Pratyush -->
-                    <div class="text-center">
-                        <div onclick="document.getElementById('pratyushFileInput').click()"
-                             class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-4 border-indigo-500 shadow-lg relative bg-indigo-950 flex items-center justify-center cursor-pointer">
-                            <img id="pratyushMiniImg" src="1.jpg" alt="Pratyush" draggable="false" class="w-full h-full object-cover select-none block">
-                        </div>
-                        <span class="block font-display font-bold text-xs text-indigo-900 mt-1.5">Pratyush (The Boy)</span>
-                    </div>
+                <div class="mini-heart-badge" onclick="triggerCenterSparkle()">
+                    <span id="duoCenterSymbol">❤️</span>
+                </div>
 
-                    <!-- Floating Heart / X Badge Between Them -->
-                    <div onclick="triggerCenterSparkle()"
-                         class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 text-white font-display font-bold text-xl sm:text-2xl flex items-center justify-center shadow-lg border-2 border-white x-badge-glow cursor-pointer">
-                        <span id="duoCenterSymbol">❤️</span>
+                <div style="text-align:center;">
+                    <div class="mini-photo-frame" style="border:3px solid #ec4899;">
+                        <img id="aarohiMiniImg" src="2.jpg" alt="Aarohi">
                     </div>
-
-                    <!-- Mini Aarohi -->
-                    <div class="text-center">
-                        <div onclick="document.getElementById('aarohiFileInput').click()"
-                             class="w-28 h-28 sm:w-32 sm:h-32 rounded-2xl overflow-hidden border-4 border-pink-500 shadow-lg relative bg-pink-950 flex items-center justify-center cursor-pointer">
-                            <img id="aarohiMiniImg" src="2.jpg" alt="Aarohi" draggable="false" class="w-full h-full object-cover select-none block">
-                        </div>
-                        <span class="block font-display font-bold text-xs text-pink-700 mt-1.5">Aarohi (The Girl)</span>
-                    </div>
+                    <span style="display:block; font-size:12px; font-weight:800; color:#9d174d; margin-top:6px;">Aarohi</span>
                 </div>
             </div>
         </section>
 
-        <!-- 3. Interactive Duo Power Meter & Locked Memories Wall -->
-        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <!-- 4. INTERACTIVE DUO METER & HIGHLIGHTS -->
+        <section class="widgets-grid">
 
-            <!-- WIDGET A: Best Duo / Compatibility Meter -->
-            <div class="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between">
+            <!-- Duo Power Meter -->
+            <div class="glass-card widget-card">
                 <div>
-                    <div class="flex items-center justify-between gap-2 mb-3">
-                        <h3 class="font-display text-2xl font-bold text-indigo-950 flex items-center gap-2">
-                            <i class="fa-solid fa-bolt-lightning text-amber-500"></i>
-                            <span>Pratyush x Aarohi Duo Meter</span>
-                        </h3>
-                        <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-800 font-bold text-xs">100% Verified</span>
+                    <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+                        <h3 style="font-size:20px; font-weight:900; color:#1e1b4b;">⚡ Pratyush x Aarohi Meter</h3>
+                        <span style="background:#fef3c7; color:#92400e; font-size:11px; font-weight:800; padding:4px 10px; border-radius:999px;">100% Verified</span>
                     </div>
-                    <p class="text-slate-600 text-sm mb-6">
-                        Test the awesome factor of the <strong>Pratyush x Aarohi</strong> combination! Click the button below to power up the meter.
+                    <p style="font-size:13px; color:#475569; margin-top:6px;">
+                        Test the compatibility &amp; duo power of <strong>Pratyush x Aarohi</strong>!
                     </p>
 
-                    <!-- Animated Progress Bar Container -->
-                    <div class="bg-slate-200/80 rounded-2xl h-8 w-full overflow-hidden p-1 shadow-inner relative">
-                        <div id="duoProgressBar"
-                             class="h-full rounded-xl bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 transition-all duration-300 flex items-center justify-end pr-3 text-white font-bold text-xs"
-                             style="width: 100%;">
-                             100% MAX!
-                        </div>
+                    <div class="progress-track">
+                        <div id="duoProgressBar" class="progress-fill">100% MAX!</div>
                     </div>
 
-                    <!-- Percentage & Status Readout -->
-                    <div class="mt-4 text-center bg-gradient-to-r from-indigo-50/90 via-purple-50/90 to-pink-50/90 rounded-2xl p-4 border border-purple-100">
-                        <div id="duoPercentageText" class="font-display text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-600">
+                    <div class="meter-readout">
+                        <div id="duoPercentageText" style="font-size:30px; font-weight:900; background:linear-gradient(90deg,#4f46e5,#ec4899); -webkit-background-clip:text; background-clip:text; color:transparent;">
                             100% AWESOME!
                         </div>
-                        <p id="duoStatusMessage" class="text-xs sm:text-sm font-semibold text-slate-600 mt-1">
+                        <p id="duoStatusMessage" style="font-size:12px; font-weight:700; color:#475569; margin-top:4px;">
                             100% LEGENDARY DUO! Pratyush x Aarohi are unstoppable! 🏆✨
                         </p>
                     </div>
                 </div>
 
-                <div class="mt-6 flex flex-col sm:flex-row gap-3">
-                    <button type="button" id="calcDuoBtn" onclick="runDuoMeter()" class="flex-1 py-3.5 px-6 rounded-2xl bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 hover:from-indigo-700 hover:to-pink-600 text-white font-display font-bold text-base shadow-lg hover:shadow-xl transition transform active:scale-95 flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        <span>Calculate Duo Power!</span>
+                <div class="action-row">
+                    <button type="button" class="primary-btn" onclick="runDuoMeter()">
+                        🪄 Calculate Duo Power!
                     </button>
-                    <button type="button" onclick="sendHighFive()" class="py-3.5 px-5 rounded-2xl bg-amber-400 hover:bg-amber-500 text-indigo-950 font-display font-bold text-base shadow-md transition transform active:scale-95 flex items-center justify-center gap-2">
+                    <button type="button" class="cheer-btn" onclick="sendHighFive()">
                         <span>❤️ Cheer</span>
-                        <span id="cheerCountBadge" class="px-2 py-0.5 rounded-full bg-white text-indigo-950 text-xs">0</span>
+                        <span id="cheerCountBadge" style="background:#fff; padding:2px 8px; border-radius:999px; font-size:12px;">0</span>
                     </button>
                 </div>
             </div>
 
-            <!-- WIDGET B: Locked Memories & Highlights Wall -->
-            <div class="glass-panel rounded-3xl p-6 sm:p-8 shadow-xl flex flex-col justify-between select-none">
+            <!-- Highlights Wall -->
+            <div class="glass-card widget-card">
                 <div>
-                    <div class="flex items-center justify-between gap-2 mb-4">
-                        <h3 class="font-display text-2xl font-bold text-indigo-950 flex items-center gap-2">
-                            <i class="fa-solid fa-heart text-pink-500"></i>
-                            <span>Pratyush x Aarohi Highlights</span>
-                        </h3>
-                        <span class="px-3 py-1 rounded-full bg-pink-100 text-pink-800 font-bold text-xs flex items-center gap-1">
-                            <i class="fa-solid fa-star text-[10px]"></i> Official
-                        </span>
+                    <div style="display:flex; align-items:center; justify-content:space-between; gap:8px;">
+                        <h3 style="font-size:20px; font-weight:900; color:#1e1b4b;">💖 Duo Highlights</h3>
+                        <span style="background:#fce7f3; color:#9d174d; font-size:11px; font-weight:800; padding:4px 10px; border-radius:999px;">★ Official</span>
                     </div>
 
-                    <!-- Curated Non-Editable Duo Highlights Grid -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                        <div class="p-4 rounded-2xl border bg-indigo-50 border-indigo-200 text-indigo-900 shadow-sm">
-                            <div class="font-display font-bold text-sm mb-1 flex items-center gap-1.5">
-                                <span>👦</span>
-                                <span>The Boy: Pratyush</span>
-                            </div>
-                            <p class="text-xs font-medium text-indigo-800/90 leading-relaxed">
-                                Always rocking the cool peace sign pose ✌️ with unstoppable positive energy!
-                            </p>
+                    <div class="highlights-grid">
+                        <div class="highlight-item" style="background:#eef2ff; border:1px solid #c7d2fe; color:#1e1b4b;">
+                            <div style="font-weight:800; margin-bottom:4px;">👦 The Boy: Pratyush</div>
+                            <div>Always rocking the cool peace sign pose ✌️ with unstoppable positive energy!</div>
                         </div>
-
-                        <div class="p-4 rounded-2xl border bg-pink-50 border-pink-200 text-pink-900 shadow-sm">
-                            <div class="font-display font-bold text-sm mb-1 flex items-center gap-1.5">
-                                <span>👧</span>
-                                <span>The Girl: Aarohi</span>
-                            </div>
-                            <p class="text-xs font-medium text-pink-800/90 leading-relaxed">
-                                Bright smile, Boss energy 👑, and natural sunshine vibes everywhere she goes!
-                            </p>
+                        <div class="highlight-item" style="background:#fdf2f8; border:1px solid #fbcfe8; color:#500724;">
+                            <div style="font-weight:800; margin-bottom:4px;">👧 The Girl: Aarohi</div>
+                            <div>Bright smile, Boss energy 👑, and natural sunshine vibes everywhere she goes!</div>
                         </div>
-
-                        <div class="p-4 rounded-2xl border bg-purple-50 border-purple-200 text-purple-900 shadow-sm">
-                            <div class="font-display font-bold text-sm mb-1 flex items-center gap-1.5">
-                                <span>⚡</span>
-                                <span>Pratyush x Aarohi</span>
-                            </div>
-                            <p class="text-xs font-medium text-purple-800/90 leading-relaxed">
-                                100% Certified Legendary Duo — the ultimate combination of cool and awesome!
-                            </p>
+                        <div class="highlight-item" style="background:#faf5ff; border:1px solid #e9d5ff; color:#3b0764;">
+                            <div style="font-weight:800; margin-bottom:4px;">⚡ Pratyush x Aarohi</div>
+                            <div>100% Certified Legendary Duo — the ultimate combination of cool and awesome!</div>
                         </div>
-
-                        <div class="p-4 rounded-2xl border bg-amber-50 border-amber-200 text-amber-900 shadow-sm">
-                            <div class="font-display font-bold text-sm mb-1 flex items-center gap-1.5">
-                                <span>🏆</span>
-                                <span>Forever Iconic</span>
-                            </div>
-                            <p class="text-xs font-medium text-amber-800/90 leading-relaxed">
-                                Official showcase page celebrating the unbeatable duo of Pratyush and Aarohi! 🌟
-                            </p>
+                        <div class="highlight-item" style="background:#fffbeb; border:1px solid #fde68a; color:#451a03;">
+                            <div style="font-weight:800; margin-bottom:4px;">🏆 Forever Iconic</div>
+                            <div>Official showcase page celebrating the unbeatable duo of Pratyush and Aarohi!</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Bottom Status Banner -->
-                <div class="mt-5 p-3.5 rounded-2xl bg-slate-900/90 text-white text-xs flex items-center justify-between gap-3">
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-circle-check text-emerald-400 text-base"></i>
-                        <span>Official Forever Showcase • <strong>Pratyush x Aarohi</strong></span>
-                    </div>
-                    <span class="px-2.5 py-1 rounded-lg bg-white/10 font-bold text-[11px] text-pink-300 shrink-0">100% Iconic</span>
+                <div style="margin-top:14px; padding:12px 14px; border-radius:14px; background:#0f172a; color:#fff; font-size:12px; display:flex; align-items:center; justify-content:space-between;">
+                    <span>✅ Official Forever Showcase • <strong>Pratyush x Aarohi</strong></span>
+                    <span style="color:#f472b6; font-weight:800;">100% Iconic</span>
                 </div>
             </div>
 
         </section>
 
-        <!-- 4. Footer Signature Banner -->
-        <footer class="pt-2 pb-6 text-center select-none">
-            <div class="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 px-6 py-3.5 rounded-full glass-panel shadow-2xl border-2 border-pink-300">
-                <span class="font-display text-base sm:text-lg font-bold text-indigo-950 tracking-wide">
-                    Made with <span class="heart-pulse mx-1 text-xl">❤️</span> by <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-pink-600 font-extrabold">Pratyush</span>
-                </span>
-                <span class="hidden sm:inline text-slate-300">•</span>
-                <span class="text-xs font-semibold text-pink-600 bg-pink-50 px-3 py-1 rounded-full border border-pink-200">
+        <!-- 5. FOOTER SIGNATURE: MADE WITH ❤️ BY PRATYUSH -->
+        <footer class="footer-wrap">
+            <div class="signature-pill">
+                <span>Made with <span class="beating-heart">❤️</span> by <strong style="background:linear-gradient(90deg,#4f46e5,#ec4899); -webkit-background-clip:text; background-clip:text; color:transparent;">Pratyush</strong></span>
+                <span style="font-size:12px; background:#fdf2f8; color:#db2777; padding:4px 10px; border-radius:999px; border:1px solid #fbcfe8;">
                     Pratyush x Aarohi Forever ✨
                 </span>
             </div>
         </footer>
 
+    </main>
+
+    <!-- ==========================================================================
+         BUILT-IN SMART TROUBLESHOOTER BUTTON & DIAGNOSTIC MODAL
+         ========================================================================== -->
+    <button type="button" id="tsFloatingBtn" class="troubleshooter-fab" onclick="toggleTroubleshooter()">
+        <span id="tsFabDot" class="ts-status-dot"></span>
+        <span>🛠️ Troubleshooter</span>
+    </button>
+
+    <div id="tsModalBackdrop" class="ts-modal-backdrop" onclick="if(event.target===this) toggleTroubleshooter(false)">
+        <div class="ts-modal-box">
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:12px;">
+                <h3 style="font-size:18px; font-weight:900;">🛠️ GitHub Pages &amp; Google Sites Troubleshooter</h3>
+                <button type="button" onclick="toggleTroubleshooter(false)" style="border:none; background:#f1f5f9; width:32px; height:32px; border-radius:50%; font-weight:900; cursor:pointer;">✕</button>
+            </div>
+
+            <p style="font-size:12px; color:#475569; margin-bottom:14px;">
+                Live self-check for <strong>pcollection.github.io</strong> and <strong>Google Sites</strong>:
+            </p>
+
+            <!-- Diagnostic 1: Mobile Layout & Scroll -->
+            <div class="ts-diag-row">
+                <div>
+                    <div style="font-weight:800;">1. Mobile Layout &amp; Scroll Fix</div>
+                    <div style="color:#64748b; margin-top:2px;">Pure embedded CSS active (no external CDN dependencies). Background icons locked with <code>position: fixed</code>.</div>
+                </div>
+                <span class="ts-badge-ok">✅ FIXED</span>
+            </div>
+
+            <!-- Diagnostic 2: Pratyush Photo (1.jpg) -->
+            <div class="ts-diag-row">
+                <div>
+                    <div style="font-weight:800;">2. Pratyush Photo (<code>1.jpg</code>)</div>
+                    <div id="tsPratyushDetail" style="color:#64748b; margin-top:2px;">Checking 1.jpg...</div>
+                </div>
+                <span id="tsPratyushBadge" class="ts-badge-warn">Checking</span>
+            </div>
+
+            <!-- Diagnostic 3: Aarohi Photo (2.jpg) -->
+            <div class="ts-diag-row">
+                <div>
+                    <div style="font-weight:800;">3. Aarohi Photo (<code>2.jpg</code>)</div>
+                    <div id="tsAarohiDetail" style="color:#64748b; margin-top:2px;">Checking 2.jpg...</div>
+                </div>
+                <span id="tsAarohiBadge" class="ts-badge-warn">Checking</span>
+            </div>
+
+            <!-- Photo Baker Box (Solves Missing 1.jpg/2.jpg Permanently) -->
+            <div style="background:#f0fdf4; border:1.5px solid #bbf7d0; border-radius:16px; padding:14px; margin-top:14px;">
+                <div style="font-weight:900; font-size:13px; color:#14532d; margin-bottom:4px;">
+                    ⚡ Ultimate Fix: Bake Both Photos Directly Into index.html
+                </div>
+                <p style="font-size:11.5px; color:#166534; line-height:1.45; margin-bottom:10px;">
+                    If <code>1.jpg</code> or <code>2.jpg</code> isn't loading on GitHub Pages or Google Sites, pick both photos below. This converts them directly into code inside <code>index.html</code> (and hides this troubleshooter) so you only have to upload <strong>one file</strong>!
+                </p>
+
+                <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+                    <button type="button" class="ts-btn" style="background:#4f46e5; color:#fff; flex:1;" onclick="document.getElementById('bakePratyushInput').click()">
+                        👦 1. Select Pratyush Photo
+                    </button>
+                    <button type="button" class="ts-btn" style="background:#ec4899; color:#fff; flex:1;" onclick="document.getElementById('bakeAarohiInput').click()">
+                        👧 2. Select Aarohi Photo
+                    </button>
+                </div>
+
+                <div style="display:flex; flex-wrap:wrap; gap:8px;">
+                    <button type="button" class="ts-btn" style="background:#15803d; color:#fff; flex:1;" onclick="downloadBakedHTML()">
+                        ⬇️ Download Ready index.html
+                    </button>
+                    <button type="button" class="ts-btn" style="background:#0f172a; color:#fff; flex:1;" onclick="copyBakedHTML()">
+                        📋 Copy Complete HTML
+                    </button>
+                </div>
+                <div id="tsBakeFeedback" style="font-size:11px; font-weight:800; color:#15803d; margin-top:8px; display:none;"></div>
+            </div>
+
+            <!-- Bottom Actions -->
+            <div style="display:flex; align-items:center; justify-content:space-between; margin-top:14px; padding-top:12px; border-top:1px solid #e2e8f0;">
+                <button type="button" class="ts-btn" style="background:#e2e8f0; color:#1e293b;" onclick="runAutoFix()">
+                    🔄 Re-Scan 1.jpg &amp; 2.jpg
+                </button>
+                <button type="button" class="ts-btn" style="background:#fee2e2; color:#991b1b;" onclick="hideTroubleshooterButton()">
+                    🙈 Hide Troubleshooter for Prank
+                </button>
+            </div>
+        </div>
     </div>
 
-    <!-- Photo Resolution & Confetti Animation Script -->
+    <!-- Photo Probing, Baker & Confetti Loop Script -->
     <script>
-        // Apply an image source to both main card and together card
-        window.setPersonPhotoSrc = function(person, src) {
-            if (!src) return;
+        window.applyPhotoToDOM = function(person, src, sourceLabel) {
             if (person === 'pratyush') {
-                const mainEl = document.getElementById('pratyushImg');
-                const miniEl = document.getElementById('pratyushMiniImg');
-                if (mainEl) mainEl.src = src;
-                if (miniEl) miniEl.src = src;
+                const mainImg = document.getElementById('pratyushMainImg');
+                const miniImg = document.getElementById('pratyushMiniImg');
+                const overlay = document.getElementById('pratyushMissingOverlay');
+                if (mainImg) mainImg.src = src;
+                if (miniImg) miniImg.src = src;
+                if (overlay) overlay.style.display = 'none';
+                window.diagState.pratyushLoaded = true;
+                window.diagState.pratyushSource = sourceLabel || src;
             } else if (person === 'aarohi') {
-                const mainEl = document.getElementById('aarohiImg');
-                const miniEl = document.getElementById('aarohiMiniImg');
-                if (mainEl) mainEl.src = src;
-                if (miniEl) miniEl.src = src;
+                const mainImg = document.getElementById('aarohiMainImg');
+                const miniImg = document.getElementById('aarohiMiniImg');
+                const overlay = document.getElementById('aarohiMissingOverlay');
+                if (mainImg) mainImg.src = src;
+                if (miniImg) miniImg.src = src;
+                if (overlay) overlay.style.display = 'none';
+                window.diagState.aarohiLoaded = true;
+                window.diagState.aarohiSource = sourceLabel || src;
+            }
+            window.refreshTroubleshooterUI();
+        };
+
+        window.markPhotoMissing = function(person) {
+            if (person === 'pratyush') {
+                const overlay = document.getElementById('pratyushMissingOverlay');
+                if (overlay) overlay.style.display = 'flex';
+                window.diagState.pratyushLoaded = false;
+                window.diagState.pratyushSource = 'Not found (upload 1.jpg or bake photo below)';
+            } else if (person === 'aarohi') {
+                const overlay = document.getElementById('aarohiMissingOverlay');
+                if (overlay) overlay.style.display = 'flex';
+                window.diagState.aarohiLoaded = false;
+                window.diagState.aarohiSource = 'Not found (upload 2.jpg or bake photo below)';
+            }
+            window.refreshTroubleshooterUI();
+        };
+
+        window.refreshTroubleshooterUI = function() {
+            const pDetail = document.getElementById('tsPratyushDetail');
+            const pBadge = document.getElementById('tsPratyushBadge');
+            const aDetail = document.getElementById('tsAarohiDetail');
+            const aBadge = document.getElementById('tsAarohiBadge');
+            const fabDot = document.getElementById('tsFabDot');
+
+            if (pDetail && pBadge) {
+                pDetail.textContent = window.diagState.pratyushLoaded
+                    ? 'Loaded successfully from: ' + window.diagState.pratyushSource
+                    : '1.jpg returned 404. Checked: ' + window.diagState.pratyushTried.join(', ');
+                pBadge.textContent = window.diagState.pratyushLoaded ? '✅ LOADED' : '⚠️ MISSING';
+                pBadge.className = window.diagState.pratyushLoaded ? 'ts-badge-ok' : 'ts-badge-warn';
+            }
+
+            if (aDetail && aBadge) {
+                aDetail.textContent = window.diagState.aarohiLoaded
+                    ? 'Loaded successfully from: ' + window.diagState.aarohiSource
+                    : '2.jpg returned 404. Checked: ' + window.diagState.aarohiTried.join(', ');
+                aBadge.textContent = window.diagState.aarohiLoaded ? '✅ LOADED' : '⚠️ MISSING';
+                aBadge.className = window.diagState.aarohiLoaded ? 'ts-badge-ok' : 'ts-badge-warn';
+            }
+
+            if (fabDot) {
+                fabDot.style.background = (window.diagState.pratyushLoaded && window.diagState.aarohiLoaded)
+                    ? '#10b981'
+                    : '#f59e0b';
             }
         };
 
-        // Silent click-on-photo handler to persist photo in localStorage for preview
-        window.handleSilentPhotoSelect = function(event, person) {
+        // Probes multiple case-sensitive extensions for GitHub Pages
+        window.runAutoFix = function() {
+            const configs = [
+                {
+                    person: 'pratyush',
+                    storageKey: 'pratyush_baked_b64',
+                    candidates: ['1.jpg', './1.jpg', '1.JPG', '1.jpeg', '1.JPEG', '1.png', '1.PNG', 'pratyush.jpg', '868_2.jpg', '868.jpg', '791_2.jpg', '791.jpg', '790.jpg']
+                },
+                {
+                    person: 'aarohi',
+                    storageKey: 'aarohi_baked_b64',
+                    candidates: ['2.jpg', './2.jpg', '2.JPG', '2.jpeg', '2.JPEG', '2.png', '2.PNG', 'aarohi.jpg', '869_2.jpg', '869.jpg', '792_2.jpg', '792.jpg', '789.jpg']
+                }
+            ];
+
+            configs.forEach(function(cfg) {
+                // 1. Check if already baked in DOM src as data:image
+                const mainEl = document.getElementById(cfg.person === 'pratyush' ? 'pratyushMainImg' : 'aarohiMainImg');
+                if (mainEl && mainEl.getAttribute('src') && mainEl.getAttribute('src').indexOf('data:image') === 0) {
+                    window.applyPhotoToDOM(cfg.person, mainEl.getAttribute('src'), 'Embedded Base64 Photo');
+                    return;
+                }
+
+                // 2. Check localStorage
+                try {
+                    const saved = localStorage.getItem(cfg.storageKey) || localStorage.getItem(cfg.person + '_img');
+                    if (saved && saved.indexOf('data:image') === 0) {
+                        window.diagState[cfg.person === 'pratyush' ? 'bakedPratyush' : 'bakedAarohi'] = saved;
+                        window.applyPhotoToDOM(cfg.person, saved, 'Saved Browser Photo');
+                        return;
+                    }
+                } catch (e) {}
+
+                // 3. Probe candidate filenames on server
+                let idx = 0;
+                const triedList = cfg.person === 'pratyush' ? window.diagState.pratyushTried : window.diagState.aarohiTried;
+                triedList.length = 0;
+
+                function tryNext() {
+                    if (idx >= cfg.candidates.length) {
+                        window.markPhotoMissing(cfg.person);
+                        return;
+                    }
+                    const cand = cfg.candidates[idx++];
+                    triedList.push(cand);
+                    const probe = new Image();
+                    probe.onload = function() {
+                        window.applyPhotoToDOM(cfg.person, cand, cand);
+                    };
+                    probe.onerror = function() {
+                        tryNext();
+                    };
+                    probe.src = cand;
+                }
+                tryNext();
+            });
+        };
+
+        // Bake photo from user device into compressed Base64 data URL
+        window.handleBakeFile = function(event, person) {
             const file = event.target.files && event.target.files[0];
             if (!file) return;
-
             const reader = new FileReader();
             reader.onload = function(e) {
                 const img = new Image();
                 img.onload = function() {
-                    const MAX_DIM = 600;
+                    const MAX_SIDE = 550;
                     let w = img.width;
                     let h = img.height;
-                    if (w > h && w > MAX_DIM) {
-                        h = Math.round(h * (MAX_DIM / w));
-                        w = MAX_DIM;
-                    } else if (h >= w && h > MAX_DIM) {
-                        w = Math.round(w * (MAX_DIM / h));
-                        h = MAX_DIM;
+                    if (w > h && w > MAX_SIDE) {
+                        h = Math.round(h * (MAX_SIDE / w));
+                        w = MAX_SIDE;
+                    } else if (h >= w && h > MAX_SIDE) {
+                        w = Math.round(w * (MAX_SIDE / h));
+                        h = MAX_SIDE;
                     }
-                    const offCanvas = document.createElement('canvas');
-                    offCanvas.width = w;
-                    offCanvas.height = h;
-                    offCanvas.getContext('2d').drawImage(img, 0, 0, w, h);
-                    const dataUrl = offCanvas.toDataURL('image/jpeg', 0.88);
+                    const c = document.createElement('canvas');
+                    c.width = w;
+                    c.height = h;
+                    c.getContext('2d').drawImage(img, 0, 0, w, h);
+                    const dataUrl = c.toDataURL('image/jpeg', 0.86);
 
-                    try {
-                        localStorage.setItem(person + '_img', dataUrl);
-                    } catch (err) {}
+                    if (person === 'pratyush') {
+                        window.diagState.bakedPratyush = dataUrl;
+                        try { localStorage.setItem('pratyush_baked_b64', dataUrl); } catch (err) {}
+                    } else {
+                        window.diagState.bakedAarohi = dataUrl;
+                        try { localStorage.setItem('aarohi_baked_b64', dataUrl); } catch (err) {}
+                    }
 
-                    window.setPersonPhotoSrc(person, dataUrl);
-                    window.playCelebrationChime();
+                    window.applyPhotoToDOM(person, dataUrl, 'Baked Base64 Photo (' + file.name + ')');
+                    const fb = document.getElementById('tsBakeFeedback');
+                    if (fb) {
+                        fb.style.display = 'block';
+                        fb.textContent = '✅ ' + (person === 'pratyush' ? 'Pratyush' : 'Aarohi') + ' photo baked into page!';
+                    }
+                    window.triggerCenterSparkle();
                 };
                 img.src = e.target.result;
             };
             reader.readAsDataURL(file);
         };
 
-        // Multi-filename automatic photo loader
-        window.initPhotos = function() {
-            const configs = [
-                {
-                    person: 'pratyush',
-                    storageKey: 'pratyush_img',
-                    SessionFallbackKey: 'baked_pratyush_b64',
-                    candidates: ['1.jpg', '868_2.jpg', '868.jpg', '791_2.jpg', '791.jpg', '790.jpg']
-                },
-                {
-                    person: 'aarohi',
-                    storageKey: 'aarohi_img',
-                    SessionFallbackKey: 'baked_aarohi_b64',
-                    candidates: ['2.jpg', '869_2.jpg', '869.jpg', '792_2.jpg', '792.jpg', '789.jpg']
-                }
-            ];
+        // Generate complete standalone HTML with baked photos and hidden troubleshooter
+        window.buildStandaloneHTML = function() {
+            const clone = document.documentElement.cloneNode(true);
+            const pSrc = window.diagState.bakedPratyush || document.getElementById('pratyushMainImg').getAttribute('src') || '1.jpg';
+            const aSrc = window.diagState.bakedAarohi || document.getElementById('aarohiMainImg').getAttribute('src') || '2.jpg';
 
-            configs.forEach(cfg => {
-                try {
-                    const savedLocal = localStorage.getItem(cfg.storageKey) || sessionStorage.getItem(cfg.SessionFallbackKey);
-                    if (savedLocal) {
-                        window.setPersonPhotoSrc(cfg.person, savedLocal);
-                        return;
-                    }
-                } catch (e) {}
-
-                let index = 0;
-                function tryNextCandidate() {
-                    if (index >= cfg.candidates.length) return;
-                    const candidate = cfg.candidates[index++];
-                    const testImg = new Image();
-                    testImg.onload = function() {
-                        window.setPersonPhotoSrc(cfg.person, candidate);
-                    };
-                    testImg.onerror = tryNextCandidate;
-                    testImg.src = candidate;
-                }
-                tryNextCandidate();
+            ['pratyushMainImg', 'pratyushMiniImg'].forEach(function(id) {
+                const el = clone.querySelector('#' + id);
+                if (el) el.setAttribute('src', pSrc);
             });
+            ['aarohiMainImg', 'aarohiMiniImg'].forEach(function(id) {
+                const el = clone.querySelector('#' + id);
+                if (el) el.setAttribute('src', aSrc);
+            });
+
+            // Hide missing overlays and troubleshooter UI in exported prank file
+            ['pratyushMissingOverlay', 'aarohiMissingOverlay', 'tsModalBackdrop', 'tsFloatingBtn'].forEach(function(id) {
+                const el = clone.querySelector('#' + id);
+                if (el) el.style.display = 'none';
+            });
+
+            return '<!DOCTYPE html>\n' + clone.outerHTML;
         };
 
-        // Confetti animation loop
-        const canvas = document.getElementById('confettiCanvas');
-        const ctx = canvas.getContext('2d');
+        window.downloadBakedHTML = function() {
+            const htmlContent = window.buildStandaloneHTML();
+            const blob = new Blob([htmlContent], { type: 'text/html;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'index.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
 
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-        window.addEventListener('resize', resizeCanvas);
-        resizeCanvas();
-
-        function updateConfetti() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            for (let i = window.particles.length - 1; i >= 0; i--) {
-                const p = window.particles[i];
-                p.x += p.vx;
-                p.y += p.vy;
-                p.vy += 0.35;
-                p.rotation += p.vr;
-                p.alpha -= 0.012;
-
-                if (p.alpha <= 0 || p.y > canvas.height + 20) {
-                    window.particles.splice(i, 1);
-                    continue;
-                }
-
-                ctx.save();
-                ctx.globalAlpha = Math.max(0, p.alpha);
-                ctx.translate(p.x, p.y);
-                ctx.rotate((p.rotation * Math.PI) / 180);
-                ctx.fillStyle = p.color;
-                ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
-                ctx.restore();
+            const fb = document.getElementById('tsBakeFeedback');
+            if (fb) {
+                fb.style.display = 'block';
+                fb.textContent = '🎉 Downloaded index.html! Upload it to GitHub Pages or Google Sites!';
             }
-            requestAnimationFrame(updateConfetti);
-        }
+        };
+
+        window.copyBakedHTML = function() {
+            const htmlContent = window.buildStandaloneHTML();
+            const ta = document.createElement('textarea');
+            ta.value = htmlContent;
+            document.body.appendChild(ta);
+            ta.select();
+            try {
+                document.execCommand('copy');
+                const fb = document.getElementById('tsBakeFeedback');
+                if (fb) {
+                    fb.style.display = 'block';
+                    fb.textContent = '📋 Complete HTML copied to clipboard!';
+                }
+            } catch (e) {}
+            document.body.removeChild(ta);
+        };
+
+        // Confetti Animation Loop
+        (function initConfetti() {
+            const canvas = document.getElementById('confettiCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+
+            function resize() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            function loop() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                for (let i = window.particles.length - 1; i >= 0; i--) {
+                    const p = window.particles[i];
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.vy += 0.35;
+                    p.rotation += p.vr;
+                    p.alpha -= 0.014;
+                    if (p.alpha <= 0 || p.y > canvas.height + 20) {
+                        window.particles.splice(i, 1);
+                        continue;
+                    }
+                    ctx.save();
+                    ctx.globalAlpha = Math.max(0, p.alpha);
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate((p.rotation * Math.PI) / 180);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                    ctx.restore();
+                }
+                requestAnimationFrame(loop);
+            }
+            loop();
+        })();
 
         window.addEventListener('DOMContentLoaded', function() {
-            window.initPhotos();
-            updateConfetti();
+            window.runAutoFix();
         });
     </script>
 </body>
